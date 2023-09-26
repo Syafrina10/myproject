@@ -110,6 +110,7 @@
         <div class="quiz-container big-buttons" id="bigButtons" style="display:none;">
             <button class="button" onclick="showMessage('Big Love')">Big Love</button>
             <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
+            <button class="button back-button" onclick="goBack('quiz2')">Back</button>
         </div>
 
         <div class="quiz-container" id="areVenuma" style="display:none;">
@@ -121,6 +122,7 @@
         <div class="quiz-container big-buttons" id="alwaysLoveYou" style="display:none;">
             <button class="button" onclick="showBigButtons('Yes')">Big Love</button>
             <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
+            <button class="button back-button" onclick="goBack('areVenuma')">Back</button>
         </div>
 
         <div class="quiz-container" id="message" style="display:none;">
@@ -129,6 +131,7 @@
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
             <p>Get well soon, my love. <span class="heart">❤️</span></p>
+            <button class="button back-button" onclick="goBack('bigButtons')">Back</button>
         </div>
     </div>
 
@@ -168,6 +171,23 @@
                 `Until then, rest, heal, and know that you are cherished beyond measure.<br>` +
                 `Get well soon, my love. <span class="heart">❤️</span>`;
         }
+
+        function goBack(step) {
+            if (step === 'quiz2') {
+                document.getElementById("quiz1").style.display = "block";
+                document.getElementById("quiz2").style.display = "none";
+            } else if (step === 'areVenuma') {
+                document.getElementById("areVenuma").style.display = "none";
+                document.getElementById("quiz2").style.display = "block";
+            } else if (step === 'alwaysLoveYou') {
+                document.getElementById("alwaysLoveYou").style.display = "none";
+                document.getElementById("areVenuma").style.display = "block";
+            } else if (step === 'bigButtons') {
+                document.getElementById("bigButtons").style.display = "none";
+                document.getElementById("message").style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
+
