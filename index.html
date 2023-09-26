@@ -129,21 +129,34 @@
  ───────────<span class="love infinity">❤️&infin;</span> 
                 </pre>
                 <button class="button back-button" onclick="goBack('quiz2')">Back</button>
-                <button class="button home-button" onclick="goBack('quiz1')">Home</button>
+                <button class="button home-button" onclick="goHome()">Home</button>
             </div>
         </div>
 
         <div class="quiz-container" id="areVenuma" style="display:none;">
             <div class="quiz">Are Venuma?</div>
-            <button class="button" onclick="showBigButtons('No')">Yes</button>
-            <button class="button" onclick="showAlwaysLoveYou()">No</button>
+            <button class="button" onclick="showPopup('Hantu')">Yes</button>
+            <button class="button" onclick="showPopup('Komugi')">No</button>
         </div>
 
         <div class="quiz-container big-buttons" id="alwaysLoveYou" style="display:none;">
-            <button class="button" onclick="showBigButtons('Yes')">Big Love</button>
-            <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
-            <button class="button back-button" onclick="goBack('areVenuma')">Back</button>
-            <button class="button home-button" onclick="goBack('quiz1')">Home</button>
+            <div class="content" id="sadMessage">
+                <p>Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):</p>
+                <pre>
+────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
+──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
+ ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
+ ─<span class="love">❤️</span>(♥)██████████████████(♥) 
+ ──<span class="love">❤️</span>(♥)████████████████(♥) 
+ ────<span class="love">❤️</span>(♥)█████████████(♥) 
+ ──────<span class="love">❤️</span>(♥)█████████(♥) 
+ ────────<span class="love">❤️</span>(♥)█████(♥) 
+ ─────────<span class="love">❤️</span>(♥)██(♥) 
+ ───────────<span class="love infinity">❤️&infin;</span> 
+                </pre>
+                <button class="button back-button" onclick="goBack('areVenuma')">Back</button>
+                <button class="button home-button" onclick="goHome()">Home</button>
+            </div>
         </div>
 
         <div class="quiz-container" id="message" style="display:none;">
@@ -218,6 +231,16 @@
                 document.getElementById("message").style.display = "none";
                 document.getElementById("message").innerHTML = "";
             }
+        }
+
+        function goHome() {
+            document.getElementById("quiz1").style.display = "block";
+            document.getElementById("quiz2").style.display = "none";
+            document.getElementById("areVenuma").style.display = "none";
+            document.getElementById("bigButtons").style.display = "none";
+            document.getElementById("alwaysLoveYou").style.display = "none";
+            document.getElementById("message").style.display = "none";
+            document.getElementById("message").innerHTML = "";
         }
     </script>
 </body>
