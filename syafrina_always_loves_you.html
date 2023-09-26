@@ -17,7 +17,7 @@
             text-shadow: 2px 2px 4px #ffb6c1;
         }
 
-        .content-container {
+        .quiz-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -25,7 +25,7 @@
             margin-bottom: 20px;
         }
 
-        .content {
+        .quiz {
             font-size: 24px;
             color: #ff0000;
             font-weight: bold;
@@ -47,17 +47,15 @@
         <div class="title">Answer the Questions</div>
     </div>
 
-    <div class="content-container">
-        <div class="content">
-            Syafrina always loves you!
-        </div>
-        <button class="button" onclick="goBack()">Back</button>
+    <div class="quiz-container">
+        <div class="quiz">Syafrina always loves you.</div>
+        <button class="button" onclick="showPopup('Big Love')">Big Love</button>
+        <button class="button" onclick="showPopup('Love Letter')">Love Letter</button>
     </div>
 
-    <!-- JavaScript functions -->
     <script>
-        function goBack() {
-            window.history.back();
+        function showPopup(choice) {
+            alert(choice);
         }
     </script>
 </body>
