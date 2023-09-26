@@ -97,33 +97,33 @@
 
         <div class="quiz-container" id="quiz1">
             <div class="quiz">Who is the prettiest girl in this world?</div>
-            <button class="button" onclick="showQuiz2()">Komugi</button>
-            <button class="button" onclick="showAlwaysLoveYou()">Hantu</button>
+            <button class="button" onclick="showQuiz2('Komugi')">Komugi</button>
+            <button class="button" onclick="showQuiz2('Hantu')">Hantu</button>
         </div>
 
-        <div class="quiz-container" id="quiz2">
+        <div class="quiz-container" id="quiz2" style="display:none;">
             <div class="quiz">Syafrina loves you or not?</div>
-            <button class="button" onclick="showBigButtons()">Yes</button>
-            <button class="button" onclick="showAreVenuma()">No</button>
+            <button class="button" onclick="showBigButtons('Yes')">Yes</button>
+            <button class="button" onclick="showAlwaysLoveYou()">No</button>
         </div>
 
-        <div class="quiz-container big-buttons" id="bigButtons">
-            <button class="button" onclick="showMessage()">Big Love</button>
-            <button class="button" onclick="showLoveLetter()">Love Letter</button>
+        <div class="quiz-container big-buttons" id="bigButtons" style="display:none;">
+            <button class="button" onclick="showMessage('Big Love')">Big Love</button>
+            <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
         </div>
 
-        <div class="quiz-container" id="areVenuma">
+        <div class="quiz-container" id="areVenuma" style="display:none;">
             <div class="quiz">Are Venuma?</div>
-            <button class="button" onclick="showAlwaysLoveYou()">Yes</button>
-            <button class="button" onclick="showBigButtons()">No</button>
+            <button class="button" onclick="showBigButtons('No')">Yes</button>
+            <button class="button" onclick="showAlwaysLoveYou()">No</button>
         </div>
 
-        <div class="quiz-container big-buttons" id="alwaysLoveYou">
-            <button class="button" onclick="showBigButtons()">Big Love</button>
-            <button class="button" onclick="showLoveLetter()">Love Letter</button>
+        <div class="quiz-container big-buttons" id="alwaysLoveYou" style="display:none;">
+            <button class="button" onclick="showBigButtons('Yes')">Big Love</button>
+            <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
         </div>
 
-        <div class="quiz-container" id="message">
+        <div class="quiz-container" id="message" style="display:none;">
             <p>My Dearest Komugi,</p>
             <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
@@ -135,33 +135,39 @@
     </div>
 
     <script>
-        function showQuiz2() {
-            document.getElementById("quiz1").style.display = "none";
-            document.getElementById("quiz2").style.display = "block";
+        function showQuiz2(choice) {
+            if (choice === 'Komugi') {
+                document.getElementById("quiz1").style.display = "none";
+                document.getElementById("quiz2").style.display = "block";
+            }
+            else if (choice === 'Hantu') {
+                document.getElementById("quiz1").style.display = "none";
+                document.getElementById("areVenuma").style.display = "block";
+            }
         }
 
         function showAlwaysLoveYou() {
-            document.getElementById("quiz1").style.display = "none";
             document.getElementById("quiz2").style.display = "none";
             document.getElementById("areVenuma").style.display = "none";
             document.getElementById("alwaysLoveYou").style.display = "block";
         }
 
-        function showBigButtons() {
+        function showBigButtons(choice) {
             document.getElementById("quiz2").style.display = "none";
             document.getElementById("areVenuma").style.display = "none";
             document.getElementById("alwaysLoveYou").style.display = "none";
             document.getElementById("bigButtons").style.display = "block";
         }
 
-        function showMessage() {
+        function showMessage(buttonClicked) {
             document.getElementById("bigButtons").style.display = "none";
             document.getElementById("message").style.display = "block";
-        }
-
-        function showLoveLetter() {
-            document.getElementById("bigButtons").style.display = "none";
-            document.getElementById("message").style.display = "block";
+            document.getElementById("message").innerHTML = `Here's your ${buttonClicked} message:<br><br>` +
+                `My Dearest Komugi,<br>` +
+                `As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.<br>` +
+                `This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.<br>` +
+                `Until then, rest, heal, and know that you are cherished beyond measure.<br>` +
+                `Get well soon, my love. <span class="heart">❤️</span>`;
         }
 
         function goBack() {
@@ -175,3 +181,4 @@
     </script>
 </body>
 </html>
+
