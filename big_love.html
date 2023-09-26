@@ -10,25 +10,28 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        h1 {
+        .title {
             font-size: 36px;
             font-weight: bold;
             color: #ff69b4;
             text-shadow: 2px 2px 4px #ffb6c1;
         }
 
-        p {
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .content {
             font-size: 24px;
             color: #ff0000;
             font-weight: bold;
         }
 
-        pre {
-            font-size: 18px;
-            color: #ff0000;
-        }
-
-        button {
+        .button {
             font-size: 18px;
             background-color: #000;
             color: #fff;
@@ -40,21 +43,36 @@
     </style>
 </head>
 <body>
-    <h1>Big Love</h1>
-    <p>Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):</p>
-    <pre>
-────❤️(♥)(♥)────(♥)(♥)(♥) 
-──❤️(♥)██████(♥)(♥)█████(♥) 
- ─❤️(♥)████████(♥)████████(♥) 
- ─❤️(♥)██████████████████(♥) 
- ──❤️(♥)████████████████(♥) 
- ────❤️(♥)█████████████(♥) 
- ──────❤️(♥)█████████(♥) 
- ────────❤️(♥)█████(♥) 
- ─────────❤️(♥)██(♥) 
- ───────────❤️&infin;
-    </pre>
-    <button onclick="window.location.href = 'index.html';">Home</button>
+    <div>
+        <div class="title">Answer the Questions</div>
+    </div>
+
+    <div class="content-container">
+        <div class="content">
+            Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):
+            <pre>
+────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
+──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
+ ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
+ ─<span class="love">❤️</span>(♥)██████████████████(♥) 
+ ──<span class="love">❤️</span>(♥)████████████████(♥) 
+ ────<span class="love">❤️</span>(♥)█████████████(♥) 
+ ──────<span class="love">❤️</span>(♥)█████████(♥) 
+ ────────<span class="love">❤️</span>(♥)█████(♥) 
+ ─────────<span class="love">❤️</span>(♥)██(♥) 
+ ───────────<span class="love infinity">❤️&infin;</span> 
+            </pre>
+        </div>
+        <button class="button" onclick="goBack()">Back</button>
+    </div>
+
+    <!-- JavaScript functions -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
+
 
