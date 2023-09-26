@@ -27,8 +27,8 @@
             text-align: left;
         }
 
-        #message, #sadMessage, #quizContainer {
-            display: block; /* Initially show the quiz content */
+        #message, #sadMessage, #quizContainer, #loveButtonContainer {
+            display: none; /* Initially hide all content except the quizzes */
         }
 
         .name {
@@ -65,13 +65,21 @@
 </head>
 <body>
     <div id="container">
+        <div class="content" id="quizContainer">
+            <!-- Quiz -->
+            <h2>Quiz</h2>
+            <p id="question">Question: Who is the prettiest girl in this world?</p>
+            <button class="button" onclick="checkAnswer('komugi')">Komugi</button>
+            <button class="button" onclick="checkAnswer('hantu')">Hantu</button>
+        </div>
+
         <div class="content" id="message">
             <p>My Dearest <span class="name">Komugi</span>,</p>
             <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
             <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
-            <button class="button" onclick="goBack('message')">Back</button>
+            <button class="button" onclick="displayLoveButtons()">Next</button>
         </div>
 
         <div class="content" id="sadMessage">
@@ -88,47 +96,51 @@
  ─────────<span class="love">❤️</span>(♥)██(♥) 
  ───────────<span class="love infinity">❤️&infin;</span> 
             </pre>
-            <button class="button" onclick="goBack('sadMessage')">Back</button>
+            <button class="button" onclick="displayLoveButtons()">Next</button>
         </div>
 
-        <div class="content" id="quizContainer">
-            <!-- Quiz -->
-            <h2>Quiz</h2>
-            <p id="question">Question: Who is the prettiest girl in this world?</p>
-            <button class="button" onclick="checkAnswer('komugi')">Komugi</button>
-            <button class="button" onclick="checkAnswer('hantu')">Hantu</button>
-            <button class="button" id="nextButton" style="display: none;" onclick="nextQuestion()">Next</button>
+        <div class="content" id="loveButtonContainer">
+            <button class="button" onclick="revealMessage()">Love Letter</button>
+            <button class="button" onclick="showSadMessage()">Big Love</button>
+        </div>
+
+        <div class="content" id="areVenuma">
+            <p>Are venuma?</p>
+            <button class="button" onclick="displayLoveButtons()">Yes</button>
+            <button class="button" onclick="displayNoButton()">No</button>
+        </div>
+
+        <div class="content" id="alwaysLoveYou">
+            <p>Syafrina always loves you!</p>
         </div>
     </div>
 
     <script>
         const contentElements = document.querySelectorAll('.content');
-        const nextButton = document.getElementById("nextButton");
-        let currentQuestion = 1;
 
         function checkAnswer(answer) {
-            if (currentQuestion === 1) {
-                if (answer === 'komugi') {
-                    alert('Yes, correct! Komugi is the prettiest girl in this world.');
-                    toggleContent('quizContainer');
-                    toggleContent('message');
-                } else if (answer === 'hantu') {
-                    alert('Ya you la, the hantu! 😄');
-                    toggleContent('quizContainer');
-                    toggleContent('sadMessage');
-                } else {
-                    alert('Invalid answer. Try again!');
-                }
+            if (answer === 'komugi') {
+                alert('Yes, correct! Komugi is the prettiest girl in this world.');
+                toggleContent('quizContainer');
+                toggleContent('message');
+            } else if (answer === 'hantu') {
+                alert('Ya you la, the hantu! 😄');
+                toggleContent('quizContainer');
+                toggleContent('sadMessage');
+            } else {
+                alert('Invalid answer. Try again!');
             }
         }
 
-        function nextQuestion() {
-            currentQuestion++;
-            if (currentQuestion === 2) {
-                document.getElementById("question").innerText = "Is Syafrina in love with you?";
-                nextButton.style.display = "none";
-                toggleContent('quizContainer');
-            }
+        function displayLoveButtons() {
+            toggleContent('sadMessage');
+            toggleContent('message');
+            toggleContent('loveButtonContainer');
+        }
+
+        function displayNoButton() {
+            toggleContent('areVenuma');
+            toggleContent('alwaysLoveYou');
         }
 
         function toggleContent(id) {
@@ -140,12 +152,10 @@
                 }
             });
         }
+    </script>
+</body>
+</html>
 
-        function goBack(id) {
-            toggleContent(id);
-            toggleContent('quizContainer');
-            currentQuestion = 1;
-        }
     </script>
 </body>
 </html>
