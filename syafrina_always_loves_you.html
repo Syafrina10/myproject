@@ -40,6 +40,25 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
+        .content {
+            font-size: 18px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .love {
+            color: #ff0000;
+            font-size: 24px;
+        }
+
+        .heart {
+            font-size: 36px;
+        }
+
+        .infinity {
+            font-size: 48px;
+        }
     </style>
 </head>
 <body>
@@ -49,14 +68,23 @@
 
     <div class="quiz-container">
         <div class="quiz">Syafrina always loves you.</div>
-        <button class="button" onclick="showPopup('Big Love')">Big Love</button>
-        <button class="button" onclick="showPopup('Love Letter')">Love Letter</button>
+        <div class="content">
+            <p>Of course! Syafrina always loves you.</p>
+        </div>
+        <button class="button" onclick="goToPage('big_love.html')">Big Love</button>
+        <button class="button" onclick="goToPage('love_letter.html')">Love Letter</button>
+        <button class="button back-button" onclick="goBack('index.html')">Home</button>
     </div>
 
     <script>
-        function showPopup(choice) {
-            alert(choice);
+        function goToPage(page) {
+            window.location.href = page;
+        }
+
+        function goBack(page) {
+            window.location.href = page;
         }
     </script>
 </body>
 </html>
+
