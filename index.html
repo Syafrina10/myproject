@@ -96,8 +96,14 @@
         </div>
 
         <div class="quiz-container" id="quiz1">
-            <div class="quiz">Is Komugi the prettiest girl in this world?</div>
-            <button class="button" onclick="showButtons()">Yes</button>
+            <div class="quiz">Who is the prettiest girl in this world?</div>
+            <button class="button" onclick="showQuiz2()">Komugi</button>
+            <button class="button" onclick="showAlwaysLoveYou()">Hantu</button>
+        </div>
+
+        <div class="quiz-container" id="quiz2">
+            <div class="quiz">Syafrina loves you or not?</div>
+            <button class="button" onclick="showBigButtons()">Yes</button>
             <button class="button" onclick="showAreVenuma()">No</button>
         </div>
 
@@ -106,14 +112,15 @@
             <button class="button" onclick="showLoveLetter()">Love Letter</button>
         </div>
 
-        <div class="quiz-container big-buttons" id="areVenuma">
-            <button class="button" onclick="showAlwaysLoveYou()">Syafrina always loves you</button>
+        <div class="quiz-container" id="areVenuma">
+            <div class="quiz">Are Venuma?</div>
+            <button class="button" onclick="showAlwaysLoveYou()">Yes</button>
+            <button class="button" onclick="showBigButtons()">No</button>
         </div>
 
-        <div class="quiz-container big-buttons" id="quiz2">
-            <div class="quiz">Does Syafrina love you?</div>
-            <button class="button" onclick="showBigButtons()">Yes</button>
-            <button class="button" onclick="showAreVenuma()">No</button>
+        <div class="quiz-container big-buttons" id="alwaysLoveYou">
+            <button class="button" onclick="showBigButtons()">Big Love</button>
+            <button class="button" onclick="showLoveLetter()">Love Letter</button>
         </div>
 
         <div class="quiz-container" id="message">
@@ -128,24 +135,22 @@
     </div>
 
     <script>
-        function showButtons() {
+        function showQuiz2() {
             document.getElementById("quiz1").style.display = "none";
-            document.getElementById("bigButtons").style.display = "block";
-        }
-
-        function showAreVenuma() {
-            document.getElementById("quiz1").style.display = "none";
-            document.getElementById("bigButtons").style.display = "none";
-            document.getElementById("areVenuma").style.display = "block";
+            document.getElementById("quiz2").style.display = "block";
         }
 
         function showAlwaysLoveYou() {
+            document.getElementById("quiz1").style.display = "none";
+            document.getElementById("quiz2").style.display = "none";
             document.getElementById("areVenuma").style.display = "none";
-            document.getElementById("bigButtons").style.display = "block";
+            document.getElementById("alwaysLoveYou").style.display = "block";
         }
 
         function showBigButtons() {
             document.getElementById("quiz2").style.display = "none";
+            document.getElementById("areVenuma").style.display = "none";
+            document.getElementById("alwaysLoveYou").style.display = "none";
             document.getElementById("bigButtons").style.display = "block";
         }
 
@@ -163,11 +168,10 @@
             document.getElementById("message").style.display = "none";
             document.getElementById("bigButtons").style.display = "none";
             document.getElementById("areVenuma").style.display = "none";
+            document.getElementById("alwaysLoveYou").style.display = "none";
             document.getElementById("quiz2").style.display = "none";
-            document.getElementById("bigButtons").style.display = "none";
             document.getElementById("quiz1").style.display = "block";
         }
     </script>
 </body>
 </html>
-
