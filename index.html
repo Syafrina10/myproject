@@ -10,6 +10,13 @@
             font-family: 'Courier New', Courier, monospace; /* Courier New font */
         }
 
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         #message {
             font-size: 24px;
             font-weight: bold;
@@ -19,10 +26,6 @@
             border-radius: 10px;
             background-color: #fff; /* White background color for the message box */
             display: none; /* Initially hide the message */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         #sadMessage {
@@ -34,10 +37,6 @@
             border-radius: 10px;
             background-color: #fff; /* White background color for the message box */
             display: none; /* Initially hide the message */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .name {
@@ -69,23 +68,23 @@
     </style>
 </head>
 <body>
-    <div>
-        <img src="https://raw.githubusercontent.com/Syafrina10/syafrinaproject/main/path/to/your/love_letter.jpeg" alt="Love Letter" id="loveLetter" style="width: 200px; height: 200px;"><br>
-        <button class="button" onclick="revealMessage()">Love Letter</button>
-        <button class="button" onclick="showSadMessage()">Click here to see my love/button>
-    </div>
+    <div id="container">
+        <div>
+            <button class="button" onclick="revealMessage()">Click Here</button>
+            <button class="button" onclick="showSadMessage()">If you didn't click here, I will be sad</button>
+        </div>
 
-    <div id="message">
-        <p>My Dearest <span class="name">Komugi</span>,</p>
-        <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
-        <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love">❤️</span>.</p>
-        <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
-        <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
-    </div>
+        <div id="message">
+            <p>My Dearest <span class="name">Komugi</span>,</p>
+            <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
+            <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love">❤️</span> &infin;.</p>
+            <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
+            <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
+        </div>
 
-    <div id="sadMessage">
-        <p> Here's a big love for you (ik the love below is cacat a bit but my love for you is not cacat :</p>
-        <pre>
+        <div id="sadMessage">
+            <p>If you didn't click the first button, here's some love for you:</p>
+            <pre>
 ────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
 ──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
  ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
@@ -96,12 +95,12 @@
  ────────<span class="love">❤️</span>(♥)█████(♥) 
  ─────────<span class="love">❤️</span>(♥)██(♥) 
  ───────────<span class="love">❤️</span>(♥) 
-        </pre>
+            </pre>
+        </div>
     </div>
 
     <script>
         function revealMessage() {
-            document.getElementById("loveLetter").style.display = "none";
             document.getElementById("message").style.display = "block";
             document.getElementById("sadMessage").style.display = "none";
         }
