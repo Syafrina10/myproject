@@ -122,6 +122,7 @@
 
     <script>
         const contentElements = document.querySelectorAll('.content');
+        const contentStack = [];
 
         function checkAnswer1(answer) {
             if (answer === 'komugi') {
@@ -164,7 +165,19 @@
                     element.style.display = "none";
                 }
             });
+
+            if (id !== 'quizContainer' && id !== 'message') {
+                contentStack.push(id);
+            }
+        }
+
+        function goBack() {
+            if (contentStack.length > 0) {
+                const previousContent = contentStack.pop();
+                toggleContent(previousContent);
+            }
         }
     </script>
 </body>
 </html>
+
