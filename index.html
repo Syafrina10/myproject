@@ -54,12 +54,6 @@
             margin-top: 10px;
         }
 
-        .home-button {
-            background-color: #0077b6;
-            color: #fff;
-            margin-top: 10px;
-        }
-
         .love {
             color: #ff0000;
             font-size: 36px;
@@ -82,7 +76,7 @@
             display: none;
         }
 
-        .message {
+        .content {
             display: none;
             font-size: 24px;
             font-weight: bold;
@@ -117,7 +111,6 @@
             <button class="button" onclick="showMessage('Big Love')">Big Love</button>
             <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
             <button class="button back-button" onclick="goBack('quiz2')">Back</button>
-            <button class="button home-button" onclick="goBack('quiz1')">Home</button>
         </div>
 
         <div class="quiz-container" id="areVenuma" style="display:none;">
@@ -130,7 +123,6 @@
             <button class="button" onclick="showBigButtons('Yes')">Big Love</button>
             <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
             <button class="button back-button" onclick="goBack('areVenuma')">Back</button>
-            <button class="button home-button" onclick="goBack('quiz1')">Home</button>
         </div>
 
         <div class="quiz-container" id="message" style="display:none;">
@@ -140,6 +132,7 @@
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
             <p>Get well soon, my love. <span class="heart">❤️</span></p>
             <button class="button back-button" onclick="goBack('bigButtons')">Back</button>
+            <button class="button home-button" onclick="goHome()">Home</button>
         </div>
     </div>
 
@@ -196,16 +189,18 @@
                 document.getElementById("message").style.display = "none";
                 document.getElementById("message").innerHTML = "";
             }
-            else if (step === 'quiz1') {
-                document.getElementById("quiz1").style.display = "block";
-                document.getElementById("quiz2").style.display = "none";
-                document.getElementById("areVenuma").style.display = "none";
-                document.getElementById("bigButtons").style.display = "none";
-                document.getElementById("alwaysLoveYou").style.display = "none";
-                document.getElementById("message").style.display = "none";
-                document.getElementById("message").innerHTML = "";
-            }
+        }
+
+        function goHome() {
+            document.getElementById("quiz1").style.display = "block";
+            document.getElementById("quiz2").style.display = "none";
+            document.getElementById("areVenuma").style.display = "none";
+            document.getElementById("bigButtons").style.display = "none";
+            document.getElementById("alwaysLoveYou").style.display = "none";
+            document.getElementById("message").style.display = "none";
+            document.getElementById("message").innerHTML = "";
         }
     </script>
 </body>
 </html>
+
