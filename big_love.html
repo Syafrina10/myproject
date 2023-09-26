@@ -40,6 +40,25 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
+        .content {
+            font-size: 18px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .love {
+            color: #ff0000;
+            font-size: 24px;
+        }
+
+        .heart {
+            font-size: 36px;
+        }
+
+        .infinity {
+            font-size: 48px;
+        }
     </style>
 </head>
 <body>
@@ -49,29 +68,34 @@
 
     <div class="quiz-container">
         <div class="quiz">Big Love</div>
-        <div class="content" id="bigLoveContent">
+        <div class="content">
             <p>Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):</p>
             <pre>
-                ────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
-                ──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
-                ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
-                ─<span class="love">❤️</span>(♥)██████████████████(♥) 
-                ──<span class="love">❤️</span>(♥)████████████████(♥) 
-                ────<span class="love">❤️</span>(♥)█████████████(♥) 
-                ──────<span class="love">❤️</span>(♥)█████████(♥) 
-                ────────<span class="love">❤️</span>(♥)█████(♥) 
-                ─────────<span class="love">❤️</span>(♥)██(♥) 
-                ───────────<span class="love infinity">❤️&infin;</span> 
+────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
+──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
+ ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
+ ─<span class="love">❤️</span>(♥)██████████████████(♥) 
+ ──<span class="love">❤️</span>(♥)████████████████(♥) 
+ ────<span class="love">❤️</span>(♥)█████████████(♥) 
+ ──────<span class="love">❤️</span>(♥)█████████(♥) 
+ ────────<span class="love">❤️</span>(♥)█████(♥) 
+ ─────────<span class="love">❤️</span>(♥)██(♥) 
+ ───────────<span class="love infinity">❤️&infin;</span> 
             </pre>
         </div>
-        <button class="button back-button" onclick="goBack('syafrina_loves_you_or_not.html')">Back</button>
-        <button class="button" onclick="goBack('index.html')">Home</button>
+        <button class="button back-button" onclick="goBack('syafrina_always_loves_you.html')">Back</button>
+        <button class="button" onclick="goToPage('index.html')">Home</button>
     </div>
 
     <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+
         function goBack(page) {
             window.location.href = page;
         }
     </script>
 </body>
 </html>
+
