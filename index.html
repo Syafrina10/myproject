@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gws My Kmg</title>
+    <title>Answer the Questions</title>
     <meta charset="UTF-8">
     <style>
         body {
@@ -17,47 +17,6 @@
             transform: translate(-50%, -50%);
         }
 
-        .content {
-            font-size: 24px;
-            font-weight: bold;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fff; /* White background color for the content */
-            display: none; /* Initially hide the content */
-            text-align: left;
-        }
-
-        #quizContainer {
-            display: block; /* Initially show the quiz container */
-        }
-
-        .quiz-question {
-            margin-bottom: 10px;
-        }
-
-        .name {
-            color: #0077b6; /* Purple color */
-        }
-
-        .love {
-            color: #ff0000; /* Red color */
-            font-size: 36px; /* Increase the size of the heart */
-        }
-
-        .smallText {
-            font-size: 16px; /* Smaller font size for the words */
-        }
-
-        .heart {
-            color: #ff1493; /* Deep Pink */
-            font-size: 48px; /* Increase the size of the heart */
-        }
-
-        .infinity {
-            color: #4b0082; /* Indigo */
-            font-size: 72px; /* Increase the size of the infinity symbol */
-        }
-
         .button {
             font-size: 18px;
             background-color: #000; /* Black color for the button background */
@@ -71,123 +30,91 @@
 </head>
 <body>
     <div id="container">
-        <div class="content" id="quizContainer">
-            <h2 style="color: #ff69b4;">Answer the Questions</h2>
-            <p>Here's a sweet quiz for you:</p>
-            <!-- Quiz 1 -->
-            <div class="quiz-question">
-                <p id="question1">Question: Who is the prettiest girl in this world?</p>
-                <button class="button" onclick="checkAnswer1('komugi')">Komugi</button>
-                <button class="button" onclick="checkAnswer1('hantu')">Hantu</button>
+        <h1>Answer the Questions</h1>
+
+        <!-- First Question: Komugi -->
+        <div id="question1">
+            <p>1. Who is the prettiest girl in this world?</p>
+            <button class="button" onclick="showAnswer('yes1')">Komugi</button>
+            <button class="button" onclick="showAnswer('no1')">Hantu</button>
+        </div>
+
+        <!-- Second Question: Syafrina Loves You or Not? -->
+        <div id="question2" style="display: none;">
+            <p>2. Does Syafrina love you?</p>
+            <button class="button" onclick="showAnswer('yes2')">Yes</button>
+            <button class="button" onclick="showAnswer('no2')">No</button>
+        </div>
+
+        <!-- Responses -->
+        <div id="responses" style="display: none;">
+            <div id="yes1" style="display: none;">
+                <p>Yes, you have great taste! Komugi is indeed the prettiest girl.</p>
+                <button class="button" onclick="showQuestion('question2')">Next</button>
+            </div>
+            <div id="no1" style="display: none;">
+                <p>Well, that's an interesting choice. But let's move on to the next question.</p>
+                <button class="button" onclick="showQuestion('question2')">Next</button>
+            </div>
+            <div id="yes2" style="display: none;">
+                <p>Great news! Syafrina loves you too!</p>
+                <button class="button" onclick="showButtons()">Next</button>
+            </div>
+            <div id="no2" style="display: none;">
+                <p>No worries, Syafrina still loves you!</p>
+                <button class="button" onclick="showButtons()">Next</button>
             </div>
         </div>
 
-        <div class="content" id="loveButtonContainer">
-            <h2 style="color: #ff69b4;">Sweet Words</h2>
-            <!-- Quiz 2 -->
-            <div class="quiz-question">
-                <p id="question2">Question: Does Syafrina love you?</p>
-                <button class="button" onclick="showLoveButtons('yes')">Yes</button>
-                <button class="button" onclick="showLoveButtons('no')">No</button>
-                <button class="button" onclick="goBack()">Back</button>
-                <button class="button" onclick="goHome()">Home</button>
-            </div>
+        <!-- Love Messages -->
+        <div id="loveMessages" style="display: none;">
+            <p>Now that you've answered the questions:</p>
+            <button class="button" onclick="showMessage('bigLove')">Big Love</button>
+            <button class="button" onclick="showMessage('loveLetter')">Love Letter</button>
         </div>
 
-        <div class="content" id="alwaysLoveYou">
-            <h2 style="color: #ff69b4;">Sweet Words</h2>
-            <button class="button" onclick="displayLoveButtons('alwaysLove')">Syafrina always loves you</button>
-            <!-- Quiz 4 -->
-            <div class="quiz-question">
-                <p>Now, let's continue with the love messages...</p>
-                <button class="button" onclick="displayLoveButtons('next')">Next</button>
-                <button class="button" onclick="goBack()">Back</button>
-                <button class="button" onclick="goHome()">Home</button>
-            </div>
+        <!-- Love Messages Content -->
+        <div id="bigLove" style="display: none;">
+            <p>────❤️(♥)(♥)────(♥)(♥)(♥)</p>
+            <p>──❤️(♥)██████(♥)(♥)█████(♥)</p>
+            <p>❤️(♥)████████(♥)████████(♥)</p>
+            <p>❤️(♥)██████████████████(♥)</p>
+            <p>──❤️(♥)████████████████(♥)</p>
+            <p>────❤️(♥)█████████████(♥)</p>
+            <p>──────❤️(♥)█████████(♥)</p>
+            <p>────────❤️(♥)█████(♥)</p>
+            <p>──────────❤️(♥)██(♥)</p>
+            <p>────────────❤️(♥)</p>
         </div>
 
-        <div class="content" id="message">
-            <p>My Dearest <span class="name" style="color: #0077b6;">Komugi</span>,</p>
+        <div id="loveLetter" style="display: none;">
+            <p>My Dearest <span class="name">Komugi</span>,</p>
             <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
-            <p>Get well soon, my <span class="name" style="color: #0077b6;">love</span>. <span class="heart">❤️</span></p>
-            <button class="button" onclick="displayLoveButtons('next')">Next</button>
-            <button class="button" onclick="goBack()">Back</button>
-            <button class="button" onclick="goHome()">Home</button>
-        </div>
-
-        <div class="content" id="sadMessage">
-            <p>Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):</p>
-            <pre>
-────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
-──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
- ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
- ─<span class="love">❤️</span>(♥)██████████████████(♥) 
- ──<span class="love">❤️</span>(♥)████████████████(♥) 
- ────<span class="love">❤️</span>(♥)█████████████(♥) 
- ──────<span class="love">❤️</span>(♥)█████████(♥) 
- ────────<span class="love">❤️</span>(♥)█████(♥) 
- ─────────<span class="love">❤️</span>(♥)██(♥) 
- ───────────<span class="love infinity">❤️&infin;</span> 
-            </pre>
-            <button class="button" onclick="goBack()">Back</button>
-            <button class="button" onclick="goHome()">Home</button>
+            <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
         </div>
     </div>
 
     <script>
-        // Define content stack to manage navigation
-        const contentStack = [];
-        const contentElements = document.querySelectorAll('.content');
-
-        function checkAnswer1(answer) {
-            toggleContent('quizContainer');
-            if (answer === 'komugi') {
-                toggleContent('loveButtonContainer');
-            }
+        function showAnswer(responseId) {
+            document.getElementById(responseId).style.display = "block";
+            document.getElementById('question1').style.display = "none";
         }
 
-        function showLoveButtons(answer) {
-            if (answer === 'yes') {
-                toggleContent('message');
-            } else if (answer === 'no') {
-                toggleContent('alwaysLoveYou');
-            }
+        function showQuestion(questionId) {
+            document.getElementById(questionId).style.display = "block";
+            document.getElementById('responses').style.display = "none";
         }
 
-        function displayLoveButtons(action) {
-            if (action === 'alwaysLove') {
-                toggleContent('message');
-            } else if (action === 'next') {
-                toggleContent('message');
-            }
+        function showButtons() {
+            document.getElementById('loveMessages').style.display = "block";
+            document.getElementById('responses').style.display = "none";
         }
 
-        function toggleContent(id) {
-            contentElements.forEach(element => {
-                if (element.id === id) {
-                    element.style.display = "block";
-                } else {
-                    element.style.display = "none";
-                }
-            });
-
-            if (id !== 'quizContainer') {
-                contentStack.push(id);
-            }
-        }
-
-        function goBack() {
-            if (contentStack.length > 0) {
-                const previousContent = contentStack.pop();
-                toggleContent(previousContent);
-            }
-        }
-
-        function goHome() {
-            toggleContent('quizContainer');
-            contentStack.length = 0;
+        function showMessage(messageId) {
+            document.getElementById(messageId).style.display = "block";
+            document.getElementById('loveMessages').style.display = "none";
         }
     </script>
 </body>
