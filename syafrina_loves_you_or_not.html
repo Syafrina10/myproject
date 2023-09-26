@@ -50,22 +50,23 @@
     <div class="quiz-container">
         <div class="quiz">Syafrina loves you or not?</div>
         <button class="button" onclick="showBigButtons('Yes')">Yes</button>
-        <button class="button" onclick="showAlwaysLoveYou()">No</button>
+        <button class="button" onclick="showPopup('No')">No</button>
     </div>
 
-    <!-- JavaScript functions -->
     <script>
         function showBigButtons(choice) {
             if (choice === 'Yes') {
-                window.location.href = 'big_love.html';
-            } else if (choice === 'No') {
-                window.location.href = 'syafrina_always_loves_you.html';
+                window.location.href = "big_love.html";
             }
         }
 
-        function showAlwaysLoveYou() {
-            window.location.href = 'always_love_you.html';
+        function showPopup(choice) {
+            if (choice === 'No') {
+                alert("Are Venuma?");
+                window.location.href = "syafrina_always_loves_you.html";
+            }
         }
     </script>
 </body>
 </html>
+
