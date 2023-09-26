@@ -42,8 +42,8 @@
         <!-- Second Question: Syafrina Loves You or Not? -->
         <div id="question2" style="display: none;">
             <p>2. Does Syafrina love you?</p>
-            <button class="button" onclick="showAnswer('yes2')">Yes</button>
-            <button class="button" onclick="showAnswer('no2')">No</button>
+            <button class="button" onclick="showButtons('yes2')">Yes</button>
+            <button class="button" onclick="showButtons('no2')">No</button>
         </div>
 
         <!-- Responses -->
@@ -58,11 +58,9 @@
             </div>
             <div id="yes2" style="display: none;">
                 <p>Great news! Syafrina loves you too!</p>
-                <button class="button" onclick="showButtons()">Next</button>
             </div>
             <div id="no2" style="display: none;">
                 <p>No worries, Syafrina still loves you!</p>
-                <button class="button" onclick="showButtons()">Next</button>
             </div>
         </div>
 
@@ -75,16 +73,16 @@
 
         <!-- Love Messages Content -->
         <div id="bigLove" style="display: none;">
-            <p>────❤️(♥)(♥)────(♥)(♥)(♥)</p>
-            <p>──❤️(♥)██████(♥)(♥)█████(♥)</p>
-            <p>❤️(♥)████████(♥)████████(♥)</p>
-            <p>❤️(♥)██████████████████(♥)</p>
-            <p>──❤️(♥)████████████████(♥)</p>
-            <p>────❤️(♥)█████████████(♥)</p>
-            <p>──────❤️(♥)█████████(♥)</p>
-            <p>────────❤️(♥)█████(♥)</p>
-            <p>──────────❤️(♥)██(♥)</p>
-            <p>────────────❤️(♥)</p>
+            <p style="color: red;">────❤️(♥)(♥)────(♥)(♥)(♥)</p>
+            <p style="color: orange;">──❤️(♥)██████(♥)(♥)█████(♥)</p>
+            <p style="color: yellow;">❤️(♥)████████(♥)████████(♥)</p>
+            <p style="color: green;">❤️(♥)██████████████████(♥)</p>
+            <p style="color: blue;">──❤️(♥)████████████████(♥)</p>
+            <p style="color: purple;">────❤️(♥)█████████████(♥)</p>
+            <p style="color: pink;">──────❤️(♥)█████████(♥)</p>
+            <p style="color: brown;">────────❤️(♥)█████(♥)</p>
+            <p style="color: black;">──────────❤️(♥)██(♥)</p>
+            <p style="color: gray;">────────────❤️(♥)</p>
         </div>
 
         <div id="loveLetter" style="display: none;">
@@ -93,6 +91,13 @@
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
             <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
+        </div>
+
+        <!-- Syafrina Always Loves You -->
+        <div id="syafrinaLove" style="display: none;">
+            <p>Syafrina always loves you! 💕</p>
+            <button class="button" onclick="showButtons('yes2')">Big Love</button>
+            <button class="button" onclick="showButtons('yes2')">Love Letter</button>
         </div>
     </div>
 
@@ -107,7 +112,7 @@
             document.getElementById('responses').style.display = "none";
         }
 
-        function showButtons() {
+        function showButtons(responseId) {
             document.getElementById('loveMessages').style.display = "block";
             document.getElementById('responses').style.display = "none";
         }
