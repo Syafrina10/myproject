@@ -60,11 +60,7 @@
         }
 
         .back-button {
-            background-color: #0077b6;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
+            display: none;
         }
     </style>
 </head>
@@ -87,4 +83,11 @@
         <a class="back-button" href="syafrina_loves_you_or_not.html">Back</a>
     </div>
 </body>
+<script>
+    // JavaScript to show the "Back" button after a delay
+    setTimeout(function() {
+        document.querySelector(".back-button").style.display = "inline";
+    }, 5000); // Adjust the delay (in milliseconds) as needed
+</script>
 </html>
+
