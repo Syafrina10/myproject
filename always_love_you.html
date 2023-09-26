@@ -17,7 +17,7 @@
             text-shadow: 2px 2px 4px #ffb6c1;
         }
 
-        .content-container {
+        .quiz-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -25,7 +25,7 @@
             margin-bottom: 20px;
         }
 
-        .content {
+        .quiz {
             font-size: 24px;
             color: #ff0000;
             font-weight: bold;
@@ -47,22 +47,22 @@
         <div class="title">Answer the Questions</div>
     </div>
 
-    <div class="content-container">
-        <div class="content">
-            My Dearest Komugi,<br>
-            As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.<br>
-            This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.<br>
-            Until then, rest, heal, and know that you are cherished beyond measure.<br>
-            Get well soon, my love. <span class="heart">❤️</span>
-        </div>
-        <button class="button" onclick="goBack()">Back</button>
+    <div class="quiz-container">
+        <div class="quiz">Syafrina always loves you.</div>
+        <button class="button" onclick="goToPage('big_love.html')">Big Love</button>
+        <button class="button" onclick="goToPage('love_letter.html')">Love Letter</button>
+        <button class="button back-button" onclick="goBack('index.html')">Home</button>
     </div>
 
-    <!-- JavaScript functions -->
     <script>
-        function goBack() {
-            window.history.back();
+        function goToPage(page) {
+            window.location.href = page;
+        }
+
+        function goBack(page) {
+            window.location.href = page;
         }
     </script>
 </body>
 </html>
+
