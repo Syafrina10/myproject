@@ -27,7 +27,7 @@
             text-align: left;
         }
 
-        #message, #sadMessage, #quizContainer, #loveButtonContainer {
+        #quizContainer, #loveButtonContainer, #areVenuma, #alwaysLoveYou {
             display: none; /* Initially hide all content except the quizzes */
         }
 
@@ -66,11 +66,31 @@
 <body>
     <div id="container">
         <div class="content" id="quizContainer">
-            <!-- Quiz -->
+            <!-- Quiz 1 -->
             <h2>Quiz</h2>
-            <p id="question">Question: Who is the prettiest girl in this world?</p>
-            <button class="button" onclick="checkAnswer('komugi')">Komugi</button>
-            <button class="button" onclick="checkAnswer('hantu')">Hantu</button>
+            <p id="question1">Question: Who is the prettiest girl in this world?</p>
+            <button class="button" onclick="checkAnswer1('komugi')">Komugi</button>
+            <button class="button" onclick="checkAnswer1('hantu')">Hantu</button>
+        </div>
+
+        <div class="content" id="loveButtonContainer">
+            <!-- Quiz 2 -->
+            <h2>Quiz</h2>
+            <p id="question2">Do you want to see the love messages?</p>
+            <button class="button" onclick="showLoveButtons()">Yes</button>
+            <button class="button" onclick="showAreVenuma()">No</button>
+        </div>
+
+        <div class="content" id="areVenuma">
+            <!-- Quiz 3 -->
+            <h2>Quiz</h2>
+            <p id="question3">Are venuma?</p>
+            <button class="button" onclick="showAlwaysLoveYou()">Yes</button>
+            <button class="button" onclick="showLoveButtons()">No</button>
+        </div>
+
+        <div class="content" id="alwaysLoveYou">
+            <button class="button" onclick="showLoveButtons()">Syafrina always loves you!</button>
         </div>
 
         <div class="content" id="message">
@@ -98,49 +118,42 @@
             </pre>
             <button class="button" onclick="displayLoveButtons()">Next</button>
         </div>
-
-        <div class="content" id="loveButtonContainer">
-            <button class="button" onclick="revealMessage()">Love Letter</button>
-            <button class="button" onclick="showSadMessage()">Big Love</button>
-        </div>
-
-        <div class="content" id="areVenuma">
-            <p>Are venuma?</p>
-            <button class="button" onclick="displayLoveButtons()">Yes</button>
-            <button class="button" onclick="displayNoButton()">No</button>
-        </div>
-
-        <div class="content" id="alwaysLoveYou">
-            <p>Syafrina always loves you!</p>
-        </div>
     </div>
 
     <script>
         const contentElements = document.querySelectorAll('.content');
 
-        function checkAnswer(answer) {
+        function checkAnswer1(answer) {
             if (answer === 'komugi') {
                 alert('Yes, correct! Komugi is the prettiest girl in this world.');
                 toggleContent('quizContainer');
-                toggleContent('message');
+                toggleContent('loveButtonContainer');
             } else if (answer === 'hantu') {
                 alert('Ya you la, the hantu! 😄');
                 toggleContent('quizContainer');
-                toggleContent('sadMessage');
+                toggleContent('areVenuma');
             } else {
                 alert('Invalid answer. Try again!');
             }
+        }
+
+        function showLoveButtons() {
+            toggleContent('loveButtonContainer');
+            toggleContent('message');
+        }
+
+        function showAreVenuma() {
+            toggleContent('areVenuma');
+        }
+
+        function showAlwaysLoveYou() {
+            toggleContent('alwaysLoveYou');
         }
 
         function displayLoveButtons() {
             toggleContent('sadMessage');
             toggleContent('message');
             toggleContent('loveButtonContainer');
-        }
-
-        function displayNoButton() {
-            toggleContent('areVenuma');
-            toggleContent('alwaysLoveYou');
         }
 
         function toggleContent(id) {
@@ -152,10 +165,6 @@
                 }
             });
         }
-    </script>
-</body>
-</html>
-
     </script>
 </body>
 </html>
