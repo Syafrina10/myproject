@@ -1,90 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Answer the Questions</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syafrina Always Loves You</title>
     <style>
         body {
-            background-color: #FFD700;
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
 
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            color: #ff69b4;
-            text-shadow: 2px 2px 4px #ffb6c1;
-        }
-
-        .quiz-container {
-            background-color: #fff;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-container {
+            text-align: center;
             margin-bottom: 20px;
-        }
-
-        .quiz {
-            font-size: 24px;
-            color: #ff0000;
-            font-weight: bold;
-        }
-
-        .button {
-            font-size: 18px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
         }
 
         .content {
             font-size: 18px;
-            text-align: left;
-            margin-top: 20px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .love {
             color: #ff0000;
+        }
+
+        .infinity {
             font-size: 24px;
         }
 
         .heart {
-            font-size: 36px;
+            font-size: 24px;
+            color: #ff0000;
         }
 
-        .infinity {
-            font-size: 48px;
+        .button {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .back-button {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <div class="title">Answer the Questions</div>
-    </div>
-
-    <div class="quiz-container">
-        <div class="quiz">Syafrina always loves you.</div>
-        <div class="content">
-            <p>Of course! Syafrina always loves you.</p>
+    <div class="container">
+        <div class="content-container">
+            <div class="content">
+                My Dearest Komugi,<br>
+                As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.<br>
+                This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.<br>
+                Until then, rest, heal, and know that you are cherished beyond measure.<br>
+                Get well soon, my love. <span class="heart">❤️</span>
+            </div>
+            <a class="back-button" href="love_letter.html">Back</a>
         </div>
-        <button class="button" onclick="goToPage('big_love.html')">Big Love</button>
-        <button class="button" onclick="goToPage('love_letter.html')">Love Letter</button>
-        <button class="button back-button" onclick="goBack('index.html')">Home</button>
     </div>
-
-    <script>
-        function goToPage(page) {
-            window.location.href = page;
-        }
-
-        function goBack(page) {
-            window.location.href = page;
-        }
-    </script>
 </body>
 </html>
 
