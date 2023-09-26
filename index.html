@@ -3,11 +3,57 @@
 <head>
     <title>Answer the Questions</title>
     <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #FFD700;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px #ffb6c1;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .quiz {
+            font-size: 24px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .button {
+            font-size: 18px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Quiz</h1>
-    <p>Who is the prettiest girl in this world?</p>
-    <button onclick="window.location.href = 'komugi.html';">Komugi</button>
-    <button onclick="window.location.href = 'hantu.html';">Hantu</button>
+    <div>
+        <div class="title">Answer the Questions</div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz">Who is the prettiest girl in this world?</div>
+        <button class="button" onclick="showPopup('Komugi')">Komugi</button>
+        <button class="button" onclick="showPopup('Hantu')">Hantu</button>
+    </div>
+
+    <!-- JavaScript functions go here -->
+
 </body>
 </html>
