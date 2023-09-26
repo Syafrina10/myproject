@@ -17,7 +17,7 @@
             text-shadow: 2px 2px 4px #ffb6c1;
         }
 
-        .content-container {
+        .quiz-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -25,7 +25,7 @@
             margin-bottom: 20px;
         }
 
-        .content {
+        .quiz {
             font-size: 24px;
             color: #ff0000;
             font-weight: bold;
@@ -47,29 +47,29 @@
         <div class="title">Answer the Questions</div>
     </div>
 
-    <div class="content-container">
-        <div class="content">
-            Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):
+    <div class="quiz-container">
+        <div class="quiz">Big Love Content</div>
+        <div class="content" id="bigLoveContent">
+            <p>Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):</p>
             <pre>
-────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
-──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
- ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
- ─<span class="love">❤️</span>(♥)██████████████████(♥) 
- ──<span class="love">❤️</span>(♥)████████████████(♥) 
- ────<span class="love">❤️</span>(♥)█████████████(♥) 
- ──────<span class="love">❤️</span>(♥)█████████(♥) 
- ────────<span class="love">❤️</span>(♥)█████(♥) 
- ─────────<span class="love">❤️</span>(♥)██(♥) 
- ───────────<span class="love infinity">❤️&infin;</span> 
+                ────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
+                ──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
+                ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
+                ─<span class="love">❤️</span>(♥)██████████████████(♥) 
+                ──<span class="love">❤️</span>(♥)████████████████(♥) 
+                ────<span class="love">❤️</span>(♥)█████████████(♥) 
+                ──────<span class="love">❤️</span>(♥)█████████(♥) 
+                ────────<span class="love">❤️</span>(♥)█████(♥) 
+                ─────────<span class="love">❤️</span>(♥)██(♥) 
+                ───────────<span class="love infinity">❤️&infin;</span> 
             </pre>
         </div>
-        <button class="button" onclick="goBack()">Back</button>
+        <button class="button" onclick="goBack('syafrina_loves_you_or_not.html')">Back</button>
     </div>
 
-    <!-- JavaScript functions -->
     <script>
-        function goBack() {
-            window.history.back();
+        function goBack(page) {
+            window.location.href = page;
         }
     </script>
 </body>
