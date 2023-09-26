@@ -51,90 +51,47 @@
             cursor: pointer;
             border-radius: 5px;
         }
-
-        /* Style for the quiz boxes */
-        .quiz-box {
-            background-color: #fff;
-            border: 2px solid #000;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        /* Style for the quiz answer buttons */
-        .quiz-answer {
-            font-size: 16px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin: 10px;
-            border-radius: 5px;
-        }
-
-        /* Style for the content box */
-        .content-box {
-            background-color: #fff;
-            border: 2px solid #000;
-            padding: 20px;
-            border-radius: 10px;
-            display: none;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="quiz-box" id="quiz1">
-            <p>1. Who is the prettiest girl in this world?</p>
-            <button class="quiz-answer" onclick="showResponse('correct')">Komugi</button>
-            <button class="quiz-answer" onclick="showResponse('incorrect')">Hantu</button>
+        <div class="message-box" id="message1">
+            <p>My Dearest <span class="name">Komugi</span>,</p>
+            <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
+            <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
+            <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
+            <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
+            <button class="button" onclick="showMessage('message2')">Big Love</button>
+            <button class="button" onclick="showMessage('message3')">Love Letter</button>
         </div>
 
-        <div class="quiz-box" id="quiz2">
-            <p>2. Syafrina loves you or not?</p>
-            <button class="quiz-answer" onclick="showResponse('yes')">Yes</button>
-            <button class="quiz-answer" onclick="showResponse('no')">No</button>
-        </div>
-
-        <div class="quiz-box" id="quiz3">
-            <p>3. Syafrina always loves you. Choose an action:</p>
-            <button class="quiz-answer" onclick="showContent('bigLoveContent')">Big Love</button>
-            <button class="quiz-answer" onclick="showContent('loveLetterContent')">Love Letter</button>
-        </div>
-
-        <div class="content-box" id="bigLoveContent">
+        <div class="message-box" id="message2">
             <p>Here's a big love for you:</p>
             <!-- Your big love content here -->
+            <button class="button" onclick="showMessage('message4')">Next</button>
         </div>
 
-        <div class="content-box" id="loveLetterContent">
+        <div class="message-box" id="message3">
             <p>My Dearest <span class="name">Komugi</span>,</p>
             <!-- Your love letter content here -->
+            <button class="button" onclick="showMessage('message4')">Next</button>
         </div>
+
+        <div class="message-box" id="message4">
+            <p>Syafrina always loves you.</p>
+            <button class="button" onclick="showMessage('message2')">Big Love</button>
+            <button class="button" onclick="showMessage('message3')">Love Letter</button>
+        </div>
+
+        <button class="button" onclick="showMessage('message1')">Restart</button>
     </div>
 
     <script>
-        function showResponse(response) {
-            if (response === 'correct') {
-                alert("Absolutely correct! You're brilliant!");
-                document.getElementById("quiz1").style.display = "none";
-                document.getElementById("quiz2").style.display = "block";
-            } else if (response === 'incorrect') {
-                alert("Are venuma?");
-                document.getElementById("quiz1").style.display = "none";
-                document.getElementById("quiz2").style.display = "block";
-            } else if (response === 'yes') {
-                document.getElementById("quiz2").style.display = "none";
-                document.getElementById("quiz3").style.display = "block";
-            } else if (response === 'no') {
-                document.getElementById("quiz2").style.display = "none";
-                document.getElementById("quiz3").style.display = "block";
-            }
-        }
-
-        function showContent(contentId) {
-            document.getElementById("quiz3").style.display = "none";
-            document.getElementById(contentId).style.display = "block";
+        function showMessage(messageId) {
+            document.querySelectorAll('.message-box').forEach(function(box) {
+                box.style.display = 'none';
+            });
+            document.getElementById(messageId).style.display = 'block';
         }
     </script>
 </body>
