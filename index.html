@@ -4,82 +4,19 @@
     <title>Speedy Recovery Message</title>
     <meta charset="UTF-8">
     <style>
-        body {
-            background-color: #e75480; /* Dark pink background color for the entire page */
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-        }
+        /* Your existing CSS styles here */
 
-        #message {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff69b4; /* Pink color */
-            text-shadow: 2px 2px 4px #ffb6c1; /* Light pink shadow */
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fff; /* White background color for the message box */
-            display: none; /* Initially hide the message */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #sadMessage {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff69b4; /* Pink color */
-            text-shadow: 2px 2px 4px #ffb6c1; /* Light pink shadow */
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fff; /* White background color for the message box */
-            display: none; /* Initially hide the message */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .name {
-            color: #0077b6; /* Blue color */
-        }
-
-        .love {
-            color: #ff0000; /* Red color */
-        }
-
-        .heart {
-            color: #ff69b4; /* Pink color */
-            font-size: 48px; /* Increase the size of the heart */
-        }
-
-        .star {
-            color: #ff69b4; /* Pink color */
-            font-size: 48px; /* Increase the size of the star */
-        }
-
-        .button {
+        /* Add a new CSS class for the second button */
+        .sad-button {
+            display: none;
             font-size: 18px;
-            background-color: #ff69b4; /* Pink color for the button background */
-            color: #fff; /* White color for the button text */
+            background-color: #ff69b4;
+            color: #fff;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
-        }
-
-        /* CSS for heart and star graphics */
-        .graphic {
-            font-size: 24px;
-            vertical-align: middle;
-        }
-
-        .heart::before {
-            content: "\2665"; /* Heart symbol */
-        }
-
-        .star::before {
-            content: "\2605"; /* Star symbol */
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -87,35 +24,30 @@
     <div>
         <img src="https://raw.githubusercontent.com/Syafrina10/syafrinaproject/main/path/to/your/love_letter.jpeg" alt="Love Letter" id="loveLetter" style="width: 200px; height: 200px;"><br>
         <button class="button" onclick="revealMessage()">Click Here</button>
-        <button class="button" onclick="showSadMessage()">If you didn't click here, I will be sad</button>
     </div>
 
     <div id="message">
-        <p>My Dearest <span class="name">Komugi</span>,</p>
-        <p>As you rest and recover, please know that my <span class="love">love</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
-        <p>This is just a small reminder that I'm here for you. I <span class="love">love</span> you more than words can express; it's <span class="love">infinity</span>.</p>
-        <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
-        <p>Get well soon, my <span class="name">love</span>. <span class="heart graphic"></span> <span class="star graphic"></span></p>
+        <!-- Your message content here -->
     </div>
 
-    <div id="sadMessage">
-        <p>If you didn't click the first button, here's some love for you:</p>
-        <p><span class="love">GWS KOMUGI MY LOVE</span></p>
-        <p><span class="heart graphic"></span></p>
-    </div>
+    <!-- Add the second button after the message div -->
+    <button class="sad-button" onclick="showSadMessage()">If you didn't click here I will be sad</button>
 
     <script>
         function revealMessage() {
             document.getElementById("loveLetter").style.display = "none";
             document.getElementById("message").style.display = "block";
-            document.getElementById("sadMessage").style.display = "none";
+            
+            // Show the second button after the message is displayed
+            document.querySelector(".sad-button").style.display = "block";
         }
 
+        // Function to show the sad message when the second button is clicked
         function showSadMessage() {
-            document.getElementById("sadMessage").style.display = "block";
-            document.getElementById("message").style.display = "none";
+            alert("GWS KOMUGI MY LOVE");
         }
     </script>
 </body>
 </html>
+
 
