@@ -96,8 +96,7 @@
 
         <div class="content" id="alwaysLoveYou">
             <h2 style="color: #ff69b4;">Sweet Words</h2>
-            <p>You answered "Yes," and that's absolutely right!</p>
-            <p>Syafrina always loves you!</p>
+            <button class="button" onclick="displayLoveButtons('alwaysLove')">Syafrina always loves you</button>
             <!-- Quiz 4 -->
             <div class="quiz-question">
                 <p>Now, let's continue with the love messages...</p>
@@ -135,59 +134,61 @@
             <button class="button" onclick="goBack()">Back</button>
             <button class="button" onclick="goHome()">Home</button>
         </div>
-
-        <script>
-            const contentElements = document.querySelectorAll(".content");
-            const contentStack = [];
-
-            function checkAnswer1(answer) {
-                toggleContent('loveButtonContainer');
-                if (answer === 'hantu') {
-                    alert('Yes, you la the hantu!');
-                }
-            }
-
-            function showLoveButtons(answer) {
-                if (answer === 'yes') {
-                    toggleContent('message');
-                } else if (answer === 'no') {
-                    toggleContent('sadMessage');
-                }
-            }
-
-            function displayLoveButtons(action) {
-                if (action === 'next') {
-                    toggleContent('message');
-                }
-            }
-
-            function toggleContent(id) {
-                contentElements.forEach(element => {
-                    if (element.id === id) {
-                        element.style.display = "block";
-                    } else {
-                        element.style.display = "none";
-                    }
-                });
-
-                if (id !== 'quizContainer') {
-                    contentStack.push(id);
-                }
-            }
-
-            function goBack() {
-                if (contentStack.length > 0) {
-                    const previousContent = contentStack.pop();
-                    toggleContent(previousContent);
-                }
-            }
-
-            function goHome() {
-                toggleContent('quizContainer');
-                contentStack.length = 0;
-            }
-        </script>
     </div>
+
+    <script>
+        // Define content stack to manage navigation
+        const contentStack = [];
+        const contentElements = document.querySelectorAll('.content');
+
+        function checkAnswer1(answer) {
+            toggleContent('quizContainer');
+            if (answer === 'komugi') {
+                toggleContent('loveButtonContainer');
+            }
+        }
+
+        function showLoveButtons(answer) {
+            if (answer === 'yes') {
+                toggleContent('message');
+            } else if (answer === 'no') {
+                toggleContent('alwaysLoveYou');
+            }
+        }
+
+        function displayLoveButtons(action) {
+            if (action === 'alwaysLove') {
+                toggleContent('message');
+            } else if (action === 'next') {
+                toggleContent('message');
+            }
+        }
+
+        function toggleContent(id) {
+            contentElements.forEach(element => {
+                if (element.id === id) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            });
+
+            if (id !== 'quizContainer') {
+                contentStack.push(id);
+            }
+        }
+
+        function goBack() {
+            if (contentStack.length > 0) {
+                const previousContent = contentStack.pop();
+                toggleContent(previousContent);
+            }
+        }
+
+        function goHome() {
+            toggleContent('quizContainer');
+            contentStack.length = 0;
+        }
+    </script>
 </body>
 </html>
-
