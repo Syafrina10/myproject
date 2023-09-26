@@ -86,24 +86,13 @@
             <button class="button" onclick="goHome()">Home</button>
         </div>
 
-        <div class="content" id="areVenuma">
-            <h2>Answer the Question</h2>
-            <p>Here's another question:</p>
-            <!-- Quiz 3 -->
-            <p id="question3">Are venuma?</p>
-            <button class="button" onclick="showAlwaysLoveYou('yes')">Yes</button>
-            <button class="button" onclick="showLoveButtons('no')">No</button>
-            <button class="button" onclick="goBack()">Back</button>
-            <button class="button" onclick="goHome()">Home</button>
-        </div>
-
         <div class="content" id="alwaysLoveYou">
             <h2>Sweet Words</h2>
             <p>You answered "Yes," and that's absolutely right!</p>
             <p>Syafrina always loves you!</p>
             <!-- Quiz 4 -->
             <p>Now, let's continue with the love messages...</p>
-            <button class="button" onclick="showLoveButtons('yes')">Next</button>
+            <button class="button" onclick="displayLoveButtons('next')">Next</button>
             <button class="button" onclick="goBack()">Back</button>
             <button class="button" onclick="goHome()">Home</button>
         </div>
@@ -136,73 +125,66 @@
             <button class="button" onclick="goBack()">Back</button>
             <button class="button" onclick="goHome()">Home</button>
         </div>
-    </div>
 
-    <script>
-        const contentElements = document.querySelectorAll(".content");
-        const contentStack = [];
+        <script>
+            const contentElements = document.querySelectorAll(".content");
+            const contentStack = [];
 
-        function checkAnswer1(answer) {
-            if (answer === 'komugi') {
-                toggleContent('loveButtonContainer');
-                toggleContent('quizContainer');
-            } else if (answer === 'hantu') {
-                alert('Ya, you la the hantu.');
-                toggleContent('quizContainer');
-                toggleContent('areVenuma');
-            }
-        }
-
-        function showLoveButtons(answer) {
-            if (answer === 'yes') {
-                toggleContent('message');
-                toggleContent('sadMessage');
-            } else if (answer === 'no') {
-                alert('Well, Syafrina always loves you! 😊');
-                toggleContent('alwaysLoveYou');
-                toggleContent('sadMessage');
-            }
-        }
-
-        function showAlwaysLoveYou(answer) {
-            if (answer === 'yes') {
-                toggleContent('message');
-                toggleContent('loveButtonContainer');
-            }
-        }
-
-        function displayLoveButtons(action) {
-            if (action === 'next') {
-                toggleContent('message');
-                toggleContent('sadMessage');
-            }
-        }
-
-        function toggleContent(id) {
-            contentElements.forEach(element => {
-                if (element.id === id) {
-                    element.style.display = "block";
-                } else {
-                    element.style.display = "none";
+            function checkAnswer1(answer) {
+                if (answer === 'komugi') {
+                    toggleContent('loveButtonContainer');
+                    toggleContent('quizContainer');
+                } else if (answer === 'hantu') {
+                    alert('Ya, you la the hantu.');
+                    toggleContent('quizContainer');
+                    toggleContent('alwaysLoveYou');
                 }
-            });
-
-            if (id !== 'quizContainer') {
-                contentStack.push(id);
             }
-        }
 
-        function goBack() {
-            if (contentStack.length > 0) {
-                const previousContent = contentStack.pop();
-                toggleContent(previousContent);
+            function showLoveButtons(answer) {
+                if (answer === 'yes') {
+                    toggleContent('message');
+                    toggleContent('sadMessage');
+                } else if (answer === 'no') {
+                    alert('Well, Syafrina always loves you! 😊');
+                    toggleContent('alwaysLoveYou');
+                    toggleContent('sadMessage');
+                }
             }
-        }
 
-        function goHome() {
-            toggleContent('quizContainer');
-            contentStack.length = 0;
-        }
-    </script>
+            function displayLoveButtons(action) {
+                if (action === 'next') {
+                    toggleContent('message');
+                    toggleContent('sadMessage');
+                }
+            }
+
+            function toggleContent(id) {
+                contentElements.forEach(element => {
+                    if (element.id === id) {
+                        element.style.display = "block";
+                    } else {
+                        element.style.display = "none";
+                    }
+                });
+
+                if (id !== 'quizContainer') {
+                    contentStack.push(id);
+                }
+            }
+
+            function goBack() {
+                if (contentStack.length > 0) {
+                    const previousContent = contentStack.pop();
+                    toggleContent(previousContent);
+                }
+            }
+
+            function goHome() {
+                toggleContent('quizContainer');
+                contentStack.length = 0;
+            }
+        </script>
+    </div>
 </body>
 </html>
