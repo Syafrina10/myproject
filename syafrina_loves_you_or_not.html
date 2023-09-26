@@ -53,10 +53,16 @@
         <button class="button" onclick="showPopup('No')">No</button>
     </div>
 
+    <div class="quiz-container big-buttons" id="bigButtons" style="display:none;">
+        <button class="button" onclick="goToPage('big_love.html')">Big Love</button>
+        <button class="button" onclick="goToPage('love_letter.html')">Love Letter</button>
+        <button class="button back-button" onclick="goBack('index.html')">Home</button>
+    </div>
+
     <script>
         function showBigButtons(choice) {
             if (choice === 'Yes') {
-                window.location.href = "big_love.html";
+                document.getElementById("bigButtons").style.display = "block";
             }
         }
 
@@ -66,7 +72,16 @@
                 window.location.href = "syafrina_always_loves_you.html";
             }
         }
+
+        function goToPage(page) {
+            window.location.href = page;
+        }
+
+        function goBack(page) {
+            window.location.href = page;
+        }
     </script>
 </body>
 </html>
+
 
