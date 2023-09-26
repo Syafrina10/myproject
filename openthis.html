@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speedy Recovery Message</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #e75480; /* Dark pink background color for the entire page */
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #message {
+            display: none; /* Initially hide the message */
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff69b4; /* Pink color */
+            text-shadow: 2px 2px 4px #ffb6c1; /* Light pink shadow */
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff; /* White background color for the message box */
+            display: inline-block;
+        }
+
+        .name {
+            color: #0077b6; /* Blue color */
+        }
+
+        .love {
+            color: #ff0000; /* Red color */
+        }
+
+        .heart {
+            color: #ff69b4; /* Pink color */
+            font-size: 48px; /* Increase the size of the heart */
+        }
+
+        .star {
+            color: #ff69b4; /* Pink color */
+            font-size: 48px; /* Increase the size of the star */
+        }
+
+        .button {
+            font-size: 18px;
+            background-color: #ff69b4; /* Pink color for the button background */
+            color: #fff; /* White color for the button text */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* CSS for heart and star graphics */
+        .graphic {
+            font-size: 24px;
+            vertical-align: middle;
+        }
+
+        .heart::before {
+            content: "\2665"; /* Heart symbol */
+        }
+
+        .star::before {
+            content: "\2605"; /* Star symbol */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://imgur.com/a/T9bAfYc" alt="Love Letter" id="loveLetter" style="width: 200px; height: 200px;"><br>
+        <button class="button" onclick="revealMessage()">Click Here</button>
+    </div>
+
+    <div id="message">
+        <p>My Dearest <span class="name">Komugi</span>,</p>
+        <p>As you rest and recover, please know that my <span class="love">love</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
+        <p>This is just a small reminder that I'm here for you. I <span class="love">love</span> you more than words can express; it's <span class="love">infinity</span>.</p>
+        <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
+        <p>Get well soon, my <span class="name">love</span>. <span class="heart graphic"></span> <span class="star graphic"></span></p>
+    </div>
+
+    <script>
+        function revealMessage() {
+            document.getElementById("loveLetter").style.display = "none";
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+</body>
+</html>
