@@ -26,12 +26,23 @@
             margin-bottom: 20px;
         }
 
-        .big-love {
-            font-size: 24px;
-            color: #ff007f;
+        .content {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+
+        .love {
+            color: #ff0000;
+            font-size: 24px;
+        }
+
+        .heart {
+            color: #ff0000;
+            font-size: 36px;
         }
 
         .button-container {
@@ -60,9 +71,9 @@
 <body>
     <div class="container">
         <div class="content-container">
-            <div class="big-love">
+            <div class="content">
                 Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):<br>
-<pre>
+                <pre>
 ────<span class="love">❤️</span>(♥)───(♥)(♥)───(♥)(♥)(♥) 
 ──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
 ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
@@ -72,7 +83,7 @@
 ──────<span class="love">❤️</span>(♥)█████████(♥) 
 ────────<span class="love">❤️</span>(♥)█████(♥) 
 ──────────<span class="love infinity">❤️&infin;</span> 
-</pre>
+                </pre>
             </div>
         </div>
         <div class="button-container">
@@ -81,11 +92,11 @@
         </div>
         <a class="back-button" href="syafrina_loves_you_or_not.html">Back</a>
     </div>
+    <script>
+        // JavaScript to show the "Back" button after a delay
+        setTimeout(function() {
+            document.querySelector(".back-button").style.display = "inline";
+        }, 5000); // Adjust the delay (in milliseconds) as needed
+    </script>
 </body>
-<script>
-    // JavaScript to show the "Back" button after a delay
-    setTimeout(function() {
-        document.querySelector(".back-button").style.display = "inline";
-    }, 5000); // Adjust the delay (in milliseconds) as needed
-</script>
 </html>
