@@ -92,14 +92,14 @@
 
         <div class="quiz-box" id="quiz2">
             <p>2. Syafrina loves you or not?</p>
-            <button class="quiz-answer" onclick="showBigLoveAndLoveLetter()">Yes</button>
-            <button class="quiz-answer" onclick="showSyafrinaAlwaysLovesYou()">No</button>
+            <button class="quiz-answer" onclick="showResponse('yes')">Yes</button>
+            <button class="quiz-answer" onclick="showResponse('no')">No</button>
         </div>
 
         <div class="quiz-box" id="quiz3">
             <p>3. Syafrina always loves you. Choose an action:</p>
-            <button class="quiz-answer" onclick="showBigLoveAndLoveLetter()">Big Love</button>
-            <button class="quiz-answer" onclick="showLoveLetter()">Love Letter</button>
+            <button class="quiz-answer" onclick="showContent('bigLoveContent')">Big Love</button>
+            <button class="quiz-answer" onclick="showContent('loveLetterContent')">Love Letter</button>
         </div>
 
         <div class="content-box" id="bigLoveContent">
@@ -123,26 +123,19 @@
                 alert("Are venuma?");
                 document.getElementById("quiz1").style.display = "none";
                 document.getElementById("quiz2").style.display = "block";
+            } else if (response === 'yes') {
+                document.getElementById("quiz2").style.display = "none";
+                document.getElementById("quiz3").style.display = "block";
+            } else if (response === 'no') {
+                document.getElementById("quiz2").style.display = "none";
+                document.getElementById("quiz3").style.display = "block";
             }
         }
 
-        function showBigLoveAndLoveLetter() {
-            document.getElementById("quiz2").style.display = "none";
-            document.getElementById("quiz3").style.display = "block";
-            document.getElementById("bigLoveContent").style.display = "block";
-        }
-
-        function showSyafrinaAlwaysLovesYou() {
-            document.getElementById("quiz2").style.display = "none";
-            document.getElementById("quiz3").style.display = "block";
-            document.getElementById("loveLetterContent").style.display = "block";
-        }
-
-        function showLoveLetter() {
+        function showContent(contentId) {
             document.getElementById("quiz3").style.display = "none";
-            document.getElementById("loveLetterContent").style.display = "block";
+            document.getElementById(contentId).style.display = "block";
         }
     </script>
 </body>
 </html>
-
