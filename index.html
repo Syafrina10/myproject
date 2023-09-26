@@ -101,28 +101,10 @@
             <button class="button" onclick="showPopup('Hantu')">Hantu</button>
         </div>
 
-        <div class="quiz-container" id="quiz2" style="display:none;">
-            <div class="quiz">Syafrina loves you or not?</div>
-            <button class="button" onclick="showBigButtons('Yes')">Yes</button>
-            <button class="button" onclick="showAlwaysLoveYou()">No</button>
-        </div>
-
         <div class="quiz-container big-buttons" id="bigButtons" style="display:none;">
             <button class="button" onclick="showMessage('Big Love')">Big Love</button>
             <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
-            <button class="button back-button" onclick="goBack('quiz2')">Back</button>
-        </div>
-
-        <div class="quiz-container" id="areVenuma" style="display:none;">
-            <div class="quiz">Are Venuma?</div>
-            <button class="button" onclick="showBigButtons('No')">Yes</button>
-            <button class="button" onclick="showAlwaysLoveYou()">No</button>
-        </div>
-
-        <div class="quiz-container big-buttons" id="alwaysLoveYou" style="display:none;">
-            <button class="button" onclick="showBigButtons('Yes')">Big Love</button>
-            <button class="button" onclick="showMessage('Love Letter')">Love Letter</button>
-            <button class="button back-button" onclick="goBack('areVenuma')">Back</button>
+            <button class="button back-button" onclick="goBack('quiz1')">Back</button>
         </div>
 
         <div class="quiz-container" id="message" style="display:none;">
@@ -140,27 +122,12 @@
             if (choice === 'Komugi') {
                 alert("Absolutely correct! You pandai.");
                 document.getElementById("quiz1").style.display = "none";
-                document.getElementById("quiz2").style.display = "block";
+                document.getElementById("bigButtons").style.display = "block";
             } else if (choice === 'Hantu') {
                 alert("Are Venuma?");
                 document.getElementById("quiz1").style.display = "none";
-                document.getElementById("areVenuma").style.display = "block";
+                document.getElementById("quiz2").style.display = "block";
             }
-        }
-
-        function showBigButtons(choice) {
-            if (choice === 'Yes') {
-                document.getElementById("quiz2").style.display = "none";
-                document.getElementById("bigButtons").style.display = "block";
-            } else if (choice === 'No') {
-                document.getElementById("areVenuma").style.display = "none";
-                document.getElementById("bigButtons").style.display = "block";
-            }
-        }
-
-        function showAlwaysLoveYou() {
-            document.getElementById("quiz2").style.display = "none";
-            document.getElementById("alwaysLoveYou").style.display = "block";
         }
 
         function showMessage(message) {
@@ -174,22 +141,16 @@
         }
 
         function goBack(step) {
-            if (step === 'quiz2') {
-                document.getElementById("quiz1").style.display = "block";
-                document.getElementById("quiz2").style.display = "none";
-            } else if (step === 'areVenuma') {
-                document.getElementById("areVenuma").style.display = "none";
-                document.getElementById("quiz1").style.display = "block";
-            } else if (step === 'alwaysLoveYou') {
-                document.getElementById("alwaysLoveYou").style.display = "none";
-                document.getElementById("quiz2").style.display = "block";
-            } else if (step === 'bigButtons') {
+            if (step === 'bigButtons') {
                 document.getElementById("bigButtons").style.display = "none";
-                document.getElementById("message").style.display = "none";
-                document.getElementById("message").innerHTML = "";
+                document.getElementById("quiz1").style.display = "block";
+            } else if (step === 'quiz1') {
+                document.getElementById("quiz1").style.display = "block";
+                document.getElementById("bigButtons").style.display = "none";
             }
         }
     </script>
 </body>
 </html>
+
 
