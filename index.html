@@ -27,8 +27,8 @@
             text-align: left;
         }
 
-        #quizContainer, #loveButtonContainer, #areVenuma, #alwaysLoveYou {
-            display: none; /* Initially hide all content except the quizzes */
+        #quizContainer {
+            display: block; /* Initially show the quiz container */
         }
 
         .name {
@@ -77,20 +77,20 @@
             <!-- Quiz 2 -->
             <h2>Quiz</h2>
             <p id="question2">Do you want to see the love messages?</p>
-            <button class="button" onclick="showLoveButtons()">Yes</button>
-            <button class="button" onclick="showAreVenuma()">No</button>
+            <button class="button" onclick="showLoveButtons('yes')">Yes</button>
+            <button class="button" onclick="showLoveButtons('no')">No</button>
         </div>
 
         <div class="content" id="areVenuma">
             <!-- Quiz 3 -->
             <h2>Quiz</h2>
             <p id="question3">Are venuma?</p>
-            <button class="button" onclick="showAlwaysLoveYou()">Yes</button>
-            <button class="button" onclick="showLoveButtons()">No</button>
+            <button class="button" onclick="showAlwaysLoveYou('yes')">Yes</button>
+            <button class="button" onclick="showLoveButtons('no')">No</button>
         </div>
 
         <div class="content" id="alwaysLoveYou">
-            <button class="button" onclick="showLoveButtons()">Syafrina always loves you!</button>
+            <button class="button" onclick="showLoveButtons('yes')">Syafrina always loves you!</button>
         </div>
 
         <div class="content" id="message">
@@ -99,7 +99,7 @@
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
             <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
-            <button class="button" onclick="displayLoveButtons()">Next</button>
+            <button class="button" onclick="displayLoveButtons('next')">Next</button>
         </div>
 
         <div class="content" id="sadMessage">
@@ -116,7 +116,7 @@
  ─────────<span class="love">❤️</span>(♥)██(♥) 
  ───────────<span class="love infinity">❤️&infin;</span> 
             </pre>
-            <button class="button" onclick="displayLoveButtons()">Next</button>
+            <button class="button" onclick="displayLoveButtons('next')">Next</button>
         </div>
     </div>
 
@@ -138,23 +138,32 @@
             }
         }
 
-        function showLoveButtons() {
-            toggleContent('loveButtonContainer');
-            toggleContent('message');
+        function showLoveButtons(answer) {
+            if (answer === 'yes') {
+                toggleContent('loveButtonContainer');
+                toggleContent('message');
+            } else if (answer === 'no') {
+                toggleContent('loveButtonContainer');
+                toggleContent('areVenuma');
+            }
         }
 
-        function showAreVenuma() {
-            toggleContent('areVenuma');
+        function showAlwaysLoveYou(answer) {
+            if (answer === 'yes') {
+                toggleContent('alwaysLoveYou');
+                toggleContent('loveButtonContainer');
+            } else if (answer === 'no') {
+                alert('Well, Syafrina always loves you! 😊');
+                toggleContent('alwaysLoveYou');
+                toggleContent('loveButtonContainer');
+            }
         }
 
-        function showAlwaysLoveYou() {
-            toggleContent('alwaysLoveYou');
-        }
-
-        function displayLoveButtons() {
-            toggleContent('sadMessage');
-            toggleContent('message');
-            toggleContent('loveButtonContainer');
+        function displayLoveButtons(action) {
+            if (action === 'next') {
+                toggleContent('sadMessage');
+                toggleContent('loveButtonContainer');
+            }
         }
 
         function toggleContent(id) {
@@ -166,7 +175,7 @@
                 }
             });
 
-            if (id !== 'quizContainer' && id !== 'message') {
+            if (id !== 'quizContainer') {
                 contentStack.push(id);
             }
         }
@@ -180,4 +189,3 @@
     </script>
 </body>
 </html>
-
