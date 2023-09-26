@@ -74,8 +74,11 @@
 <body>
     <div id="container">
         <div>
-            <button class="button" onclick="revealMessage()">Love Letter</button>
-            <button class="button" onclick="showSadMessage()">Big Love</button>
+            <!-- Funny Quiz -->
+            <h2>Let's Play a Funny Quiz!</h2>
+            <p>Question: Who is the prettiest girl in this world?</p>
+            <button class="button" onclick="checkAnswer('komugi')">Komugi</button>
+            <button class="button" onclick="checkAnswer('hantu')">Hantu</button>
         </div>
 
         <div id="message">
@@ -87,7 +90,7 @@
         </div>
 
         <div id="sadMessage">
-            <p>Here's a big love for you (Sorry, i know the love below is cacat, but my love for you is not cacat):</p>
+            <p>Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):</p>
             <pre>
 ────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
 ──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
@@ -104,6 +107,18 @@
     </div>
 
     <script>
+        function checkAnswer(answer) {
+            if (answer === 'komugi') {
+                alert('Yes, correct! Komugi is the prettiest girl in this world.');
+                // Show the Love Letter and Big Love buttons
+                document.getElementById("message").style.display = "block";
+            } else if (answer === 'hantu') {
+                alert('Ya you la, the hantu! 😄');
+            } else {
+                alert('Invalid answer. Try again!');
+            }
+        }
+
         function revealMessage() {
             document.getElementById("message").style.display = "block";
             document.getElementById("sadMessage").style.display = "none";
