@@ -24,6 +24,14 @@
             text-shadow: 2px 2px 4px #ffb6c1;
         }
 
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
         .quiz {
             font-size: 24px;
             color: #ff0000;
@@ -77,6 +85,7 @@
             padding: 20px;
             border-radius: 10px;
             background-color: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -86,28 +95,28 @@
             <div class="title">Answer the Questions</div>
         </div>
 
-        <div id="quiz1">
+        <div class="quiz-container" id="quiz1">
             <div class="quiz">Is Komugi the prettiest girl in this world?</div>
             <button class="button" onclick="showButtons()">Yes</button>
             <button class="button" onclick="showAreVenuma()">No</button>
         </div>
 
-        <div id="bigButtons" class="big-buttons">
+        <div class="quiz-container big-buttons" id="bigButtons">
             <button class="button" onclick="showMessage()">Big Love</button>
             <button class="button" onclick="showLoveLetter()">Love Letter</button>
         </div>
 
-        <div id="areVenuma" class="big-buttons">
+        <div class="quiz-container big-buttons" id="areVenuma">
             <button class="button" onclick="showAlwaysLoveYou()">Syafrina always loves you</button>
         </div>
 
-        <div id="quiz2" class="big-buttons">
+        <div class="quiz-container big-buttons" id="quiz2">
             <div class="quiz">Does Syafrina love you?</div>
             <button class="button" onclick="showBigButtons()">Yes</button>
             <button class="button" onclick="showAreVenuma()">No</button>
         </div>
 
-        <div id="message" class="message">
+        <div class="quiz-container" id="message">
             <p>My Dearest Komugi,</p>
             <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
