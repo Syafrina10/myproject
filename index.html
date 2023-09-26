@@ -46,16 +46,15 @@
 
         .love {
             color: #ff0000; /* Red color */
+            font-size: 36px; /* Increase the size of the heart */
+        }
+
+        .smallText {
+            font-size: 16px; /* Smaller font size for the words */
         }
 
         .heart {
-            color: #ff69b4; /* Pink color */
             font-size: 48px; /* Increase the size of the heart */
-        }
-
-        .star {
-            color: #ff69b4; /* Pink color */
-            font-size: 48px; /* Increase the size of the star */
         }
 
         .button {
@@ -66,20 +65,6 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
-        }
-
-        /* CSS for heart and star graphics */
-        .graphic {
-            font-size: 24px;
-            vertical-align: middle;
-        }
-
-        .heart::before {
-            content: "\2665"; /* Heart symbol */
-        }
-
-        .star::before {
-            content: "\2605"; /* Star symbol */
         }
     </style>
 </head>
@@ -92,27 +77,26 @@
 
     <div id="message">
         <p>My Dearest <span class="name">Komugi</span>,</p>
-        <p>As you rest and recover, please know that my <span class="love">love</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
-        <p>This is just a small reminder that I'm here for you. I <span class="love">love</span> you more than words can express; it's <span class="love">infinity</span>.</p>
+        <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
+        <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love">❤️</span>.</p>
         <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
-        <p>Get well soon, my <span class="name">love</span>. <span class="heart graphic"></span> <span class="star graphic"></span></p>
+        <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
     </div>
 
     <div id="sadMessage">
         <p>If you didn't click the first button, here's some love for you:</p>
         <pre>
-────(♥)(♥)(♥)────(♥)(♥)(♥) sending you a big love,
-──(♥)██████(♥)(♥)█████(♥) please take care.
-─(♥)████████(♥)████████(♥) ɪƒ ƴσυ ѡαηт тσ cʀƴ,
-─(♥)██████████████████(♥) ɪ'ʟʟ ɓє ƴσυʀ tissue.
-──(♥)████████████████(♥) ɪ wish i can kill all the bacteria in your body.
-────(♥)█████████████(♥) speedy recovery to you.
-──────(♥)█████████(♥) ɪƒ ƴσυ ηєє∂ тσ ɓє ɧαρρƴ,
-────────(♥)█████(♥) ɪ'ʟʟ ɓє ƴσυʀ ѕɱɪʟє.
-─────────(♥)██(♥) ɓυт αηƴтɪɱє if ƴσυ ηєє∂ me,
-───────────(♥) ɪ'ʟʟ be your shadow.
+────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) sending you a big love,
+──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) please take care.
+─<span class="love">❤️</span>(♥)████████(♥)████████(♥) ɪƒ ƴσυ ѡαηт тσ cʀƴ,
+─<span class="love">❤️</span>(♥)██████████████████(♥) ɪ'ʟʟ ɓє ƴσυʀ tissue.
+──<span class="love">❤️</span>(♥)████████████████(♥) ɪ wish i can kill all the bacteria in your body.
+────<span class="love">❤️</span>(♥)█████████████(♥) speedy recovery to you.
+──────<span class="love">❤️</span>(♥)█████████(♥) ɪƒ ƴσυ ηєє∂ тσ ɓє ɧαρρƴ,
+────────<span class="love">❤️</span>(♥)█████(♥) ɪ'ʟʟ ɓє ƴσυʀ ѕɱɪʟє.
+─────────<span class="love">❤️</span>(♥)██(♥) ɓυт αηƴтɪɱє if ƴσυ ηєє∂ me,
+───────────<span class="love">❤️</span>(♥) ɪ'ʟʟ be your shadow.
         </pre>
-        <p><span class="heart graphic"></span></p>
     </div>
 
     <script>
@@ -129,4 +113,3 @@
     </script>
 </body>
 </html>
-
