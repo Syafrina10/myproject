@@ -21,13 +21,36 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        .love-letter {
-            font-size: 24px;
+        .content-container {
             text-align: center;
             margin-bottom: 20px;
         }
 
-        .back-button {
+        .content {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .love {
+            color: #ff0000;
+        }
+
+        .infinity {
+            font-size: 24px;
+        }
+
+        .heart {
+            font-size: 24px;
+            color: #ff0000;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
             background-color: #0077b6;
             color: #fff;
             padding: 10px 20px;
@@ -36,7 +59,7 @@
             margin-right: 10px;
         }
 
-        .home-button {
+        .back-button {
             background-color: #0077b6;
             color: #fff;
             padding: 10px 20px;
@@ -47,25 +70,27 @@
 </head>
 <body>
     <div class="container">
-        <p class="love-letter">
-            Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):
-        </p>
-        <pre>
-────<span style="color: #ff0000;">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
-──<span style="color: #ff0000;">❤️</span>(♥)██████(♥)(♥)█████(♥) 
- ─<span style="color: #ff0000;">❤️</span>(♥)████████(♥)████████(♥) 
- ─<span style="color: #ff0000;">❤️</span>(♥)██████████████████(♥) 
- ──<span style="color: #ff0000;">❤️</span>(♥)████████████████(♥) 
- ────<span style="color: #ff0000;">❤️</span>(♥)█████████████(♥) 
- ──────<span style="color: #ff0000;">❤️</span>(♥)█████████(♥) 
- ────────<span style="color: #ff0000;">❤️</span>(♥)█████(♥) 
- ─────────<span style="color: #ff0000;">❤️</span>(♥)██(♥) 
- ───────────<span style="color: #ff0000;">❤️</span><span style="font-size: 48px;">&infin;</span> 
-        </pre>
-        <a class="back-button" href="syafrina_always_loves_you.html">Back</a>
-        <a class="home-button" href="index.html">Home</a>
+        <div class="content-container">
+            <div class="content">
+                My Dearest Komugi,<br>
+                As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.<br>
+                This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.<br>
+                Until then, rest, heal, and know that you are cherished beyond measure.<br>
+                Get well soon, my love. <span class="heart">❤️</span>
+            </div>
+        </div>
+        <div class="button-container">
+            <a class="button" href="big_love.html">Big Love</a>
+            <a class="button" href="index.html">Home</a>
+        </div>
+        <a class="back-button" href="syafrina_loves_you_or_not.html">Back</a>
     </div>
 </body>
+<script>
+    // JavaScript to show the "Back" button after a delay
+    setTimeout(function() {
+        document.querySelector(".back-button").style.display = "inline";
+    }, 5000); // Adjust the delay (in milliseconds) as needed
+</script>
 </html>
-
 
