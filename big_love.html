@@ -1,101 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Answer the Questions</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Love</title>
     <style>
         body {
-            background-color: #FFD700;
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
 
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            color: #ff69b4;
-            text-shadow: 2px 2px 4px #ffb6c1;
-        }
-
-        .quiz-container {
-            background-color: #fff;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-container {
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .quiz {
-            font-size: 24px;
-            color: #ff0000;
-            font-weight: bold;
-        }
-
         .button {
-            font-size: 18px;
-            background-color: #000;
+            background-color: #0077b6;
             color: #fff;
-            border: none;
             padding: 10px 20px;
-            cursor: pointer;
+            text-decoration: none;
             border-radius: 5px;
+            margin-right: 10px;
         }
 
-        .content {
-            font-size: 18px;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .love {
-            color: #ff0000;
-            font-size: 24px;
-        }
-
-        .heart {
-            font-size: 36px;
-        }
-
-        .infinity {
-            font-size: 48px;
+        .back-button {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <div class="title">Answer the Questions</div>
-    </div>
-
-    <div class="quiz-container">
-        <div class="quiz">Big Love</div>
-        <div class="content">
-            <p>Here's a big love for you (Sorry, I know the love below is cacat, but my love for you is not cacat):</p>
-            <pre>
-────<span class="love">❤️</span>(♥)(♥)────(♥)(♥)(♥) 
-──<span class="love">❤️</span>(♥)██████(♥)(♥)█████(♥) 
- ─<span class="love">❤️</span>(♥)████████(♥)████████(♥) 
- ─<span class="love">❤️</span>(♥)██████████████████(♥) 
- ──<span class="love">❤️</span>(♥)████████████████(♥) 
- ────<span class="love">❤️</span>(♥)█████████████(♥) 
- ──────<span class="love">❤️</span>(♥)█████████(♥) 
- ────────<span class="love">❤️</span>(♥)█████(♥) 
- ─────────<span class="love">❤️</span>(♥)██(♥) 
- ───────────<span class="love infinity">❤️&infin;</span> 
-            </pre>
+    <div class="container">
+        <div class="button-container">
+            <a class="button" href="love_letter.html">Big Love</a>
+            <a class="button" href="love_letter.html">Love Letter</a>
+            <a class="button" href="index.html">Home</a>
         </div>
-        <button class="button back-button" onclick="goBack('syafrina_always_loves_you.html')">Back</button>
-        <button class="button" onclick="goToPage('index.html')">Home</button>
+        <a class="back-button" href="syafrina_loves_you_or_not.html">Back</a>
     </div>
-
-    <script>
-        function goToPage(page) {
-            window.location.href = page;
-        }
-
-        function goBack(page) {
-            window.location.href = page;
-        }
-    </script>
 </body>
 </html>
 
