@@ -66,31 +66,46 @@
 <body>
     <div id="container">
         <div class="content" id="quizContainer">
+            <h2>Answer the Questions</h2>
+            <p>Here's a sweet quiz for you:</p>
             <!-- Quiz 1 -->
-            <h2>Quiz</h2>
             <p id="question1">Question: Who is the prettiest girl in this world?</p>
             <button class="button" onclick="checkAnswer1('komugi')">Komugi</button>
             <button class="button" onclick="checkAnswer1('hantu')">Hantu</button>
         </div>
 
         <div class="content" id="loveButtonContainer">
+            <h2>Sweet Words</h2>
+            <p>You chose wisely! Komugi is indeed the prettiest girl in this world.</p>
+            <p>Now, let's move on to some sweet messages...</p>
             <!-- Quiz 2 -->
-            <h2>Quiz</h2>
             <p id="question2">Do you want to see the love messages?</p>
             <button class="button" onclick="showLoveButtons('yes')">Yes</button>
             <button class="button" onclick="showLoveButtons('no')">No</button>
+            <button class="button" onclick="goBack()">Back</button>
+            <button class="button" onclick="goHome()">Home</button>
         </div>
 
         <div class="content" id="areVenuma">
+            <h2>Answer the Question</h2>
+            <p>Here's another question:</p>
             <!-- Quiz 3 -->
-            <h2>Quiz</h2>
             <p id="question3">Are venuma?</p>
             <button class="button" onclick="showAlwaysLoveYou('yes')">Yes</button>
             <button class="button" onclick="showLoveButtons('no')">No</button>
+            <button class="button" onclick="goBack()">Back</button>
+            <button class="button" onclick="goHome()">Home</button>
         </div>
 
         <div class="content" id="alwaysLoveYou">
-            <button class="button" onclick="showLoveButtons('yes')">Syafrina always loves you!</button>
+            <h2>Sweet Words</h2>
+            <p>You answered "Yes," and that's absolutely right!</p>
+            <p>Syafrina always loves you!</p>
+            <!-- Quiz 4 -->
+            <p>Now, let's continue with the love messages...</p>
+            <button class="button" onclick="showLoveButtons('yes')">Next</button>
+            <button class="button" onclick="goBack()">Back</button>
+            <button class="button" onclick="goHome()">Home</button>
         </div>
 
         <div class="content" id="message">
@@ -100,6 +115,8 @@
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
             <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
             <button class="button" onclick="displayLoveButtons('next')">Next</button>
+            <button class="button" onclick="goBack()">Back</button>
+            <button class="button" onclick="goHome()">Home</button>
         </div>
 
         <div class="content" id="sadMessage">
@@ -116,53 +133,48 @@
  ─────────<span class="love">❤️</span>(♥)██(♥) 
  ───────────<span class="love infinity">❤️&infin;</span> 
             </pre>
-            <button class="button" onclick="displayLoveButtons('next')">Next</button>
+            <button class="button" onclick="goBack()">Back</button>
+            <button class="button" onclick="goHome()">Home</button>
         </div>
     </div>
 
     <script>
-        const contentElements = document.querySelectorAll('.content');
+        const contentElements = document.querySelectorAll(".content");
         const contentStack = [];
 
         function checkAnswer1(answer) {
             if (answer === 'komugi') {
-                alert('Yes, correct! Komugi is the prettiest girl in this world.');
-                toggleContent('quizContainer');
                 toggleContent('loveButtonContainer');
+                toggleContent('quizContainer');
             } else if (answer === 'hantu') {
-                alert('Ya you la, the hantu! 😄');
+                alert('Ya, you la the hantu.');
                 toggleContent('quizContainer');
                 toggleContent('areVenuma');
-            } else {
-                alert('Invalid answer. Try again!');
             }
         }
 
         function showLoveButtons(answer) {
             if (answer === 'yes') {
-                toggleContent('loveButtonContainer');
                 toggleContent('message');
+                toggleContent('sadMessage');
             } else if (answer === 'no') {
-                toggleContent('loveButtonContainer');
-                toggleContent('areVenuma');
+                alert('Well, Syafrina always loves you! 😊');
+                toggleContent('alwaysLoveYou');
+                toggleContent('sadMessage');
             }
         }
 
         function showAlwaysLoveYou(answer) {
             if (answer === 'yes') {
-                toggleContent('alwaysLoveYou');
-                toggleContent('loveButtonContainer');
-            } else if (answer === 'no') {
-                alert('Well, Syafrina always loves you! 😊');
-                toggleContent('alwaysLoveYou');
+                toggleContent('message');
                 toggleContent('loveButtonContainer');
             }
         }
 
         function displayLoveButtons(action) {
             if (action === 'next') {
+                toggleContent('message');
                 toggleContent('sadMessage');
-                toggleContent('loveButtonContainer');
             }
         }
 
@@ -185,6 +197,11 @@
                 const previousContent = contentStack.pop();
                 toggleContent(previousContent);
             }
+        }
+
+        function goHome() {
+            toggleContent('quizContainer');
+            contentStack.length = 0;
         }
     </script>
 </body>
