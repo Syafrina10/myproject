@@ -97,8 +97,8 @@
 
         <div class="quiz-container" id="quiz1">
             <div class="quiz">Who is the prettiest girl in this world?</div>
-            <button class="button" onclick="showQuiz2('Komugi')">Komugi</button>
-            <button class="button" onclick="showQuiz2('Hantu')">Hantu</button>
+            <button class="button" onclick="showPopup('Komugi')">Komugi</button>
+            <button class="button" onclick="showPopup('Hantu')">Hantu</button>
         </div>
 
         <div class="quiz-container" id="quiz2" style="display:none;">
@@ -130,17 +130,16 @@
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
             <p>Get well soon, my love. <span class="heart">❤️</span></p>
         </div>
-
-        <button id="backButton" class="button back-button" onclick="goBack()">Back</button>
     </div>
 
     <script>
-        function showQuiz2(choice) {
+        function showPopup(choice) {
             if (choice === 'Komugi') {
+                alert("Absolutely correct! You pandai.");
                 document.getElementById("quiz1").style.display = "none";
                 document.getElementById("quiz2").style.display = "block";
-            }
-            else if (choice === 'Hantu') {
+            } else if (choice === 'Hantu') {
+                alert("Are Venuma?");
                 document.getElementById("quiz1").style.display = "none";
                 document.getElementById("areVenuma").style.display = "block";
             }
@@ -169,16 +168,6 @@
                 `Until then, rest, heal, and know that you are cherished beyond measure.<br>` +
                 `Get well soon, my love. <span class="heart">❤️</span>`;
         }
-
-        function goBack() {
-            document.getElementById("message").style.display = "none";
-            document.getElementById("bigButtons").style.display = "none";
-            document.getElementById("areVenuma").style.display = "none";
-            document.getElementById("alwaysLoveYou").style.display = "none";
-            document.getElementById("quiz2").style.display = "none";
-            document.getElementById("quiz1").style.display = "block";
-        }
     </script>
 </body>
 </html>
-
