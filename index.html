@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <style>
         body {
-            background-color: #FFD700; /* Mustard yellow background color for the entire page */
+            background-color: #FFD700;
             text-align: center;
-            font-family: 'Courier New', Courier, monospace; /* Courier New font */
+            font-family: 'Courier New', Courier, monospace;
         }
 
         #container {
@@ -17,110 +17,148 @@
             transform: translate(-50%, -50%);
         }
 
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px #ffb6c1;
+        }
+
+        .quiz {
+            font-size: 24px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
         .button {
             font-size: 18px;
-            background-color: #000; /* Black color for the button background */
-            color: #fff; /* White color for the button text */
+            background-color: #000;
+            color: #fff;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
         }
+
+        .back-button {
+            background-color: #0077b6;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .love {
+            color: #ff0000;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .smallText {
+            font-size: 16px;
+        }
+
+        .heart {
+            font-size: 48px;
+        }
+
+        .infinity {
+            font-size: 72px;
+        }
+
+        .big-buttons {
+            display: none;
+        }
+
+        .message {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px #ffb6c1;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
     </style>
 </head>
 <body>
     <div id="container">
-        <h1>Answer the Questions</h1>
-
-        <!-- First Question: Komugi -->
-        <div id="question1">
-            <p>1. Who is the prettiest girl in this world?</p>
-            <button class="button" onclick="showAnswer('yes1')">Komugi</button>
-            <button class="button" onclick="showAnswer('no1')">Hantu</button>
+        <div>
+            <div class="title">Answer the Questions</div>
         </div>
 
-        <!-- Second Question: Syafrina Loves You or Not? -->
-        <div id="question2" style="display: none;">
-            <p>2. Does Syafrina love you?</p>
-            <button class="button" onclick="showButtons('yes2')">Yes</button>
-            <button class="button" onclick="showButtons('no2')">No</button>
+        <div id="quiz1">
+            <div class="quiz">Is Komugi the prettiest girl in this world?</div>
+            <button class="button" onclick="showButtons()">Yes</button>
+            <button class="button" onclick="showAreVenuma()">No</button>
         </div>
 
-        <!-- Responses -->
-        <div id="responses" style="display: none;">
-            <div id="yes1" style="display: none;">
-                <p>Yes, you have great taste! Komugi is indeed the prettiest girl.</p>
-                <button class="button" onclick="showQuestion('question2')">Next</button>
-            </div>
-            <div id="no1" style="display: none;">
-                <p>Well, that's an interesting choice. But let's move on to the next question.</p>
-                <button class="button" onclick="showQuestion('question2')">Next</button>
-            </div>
-            <div id="yes2" style="display: none;">
-                <p>Great news! Syafrina loves you too!</p>
-            </div>
-            <div id="no2" style="display: none;">
-                <p>No worries, Syafrina still loves you!</p>
-            </div>
+        <div id="bigButtons" class="big-buttons">
+            <button class="button" onclick="showMessage()">Big Love</button>
+            <button class="button" onclick="showLoveLetter()">Love Letter</button>
         </div>
 
-        <!-- Love Messages -->
-        <div id="loveMessages" style="display: none;">
-            <p>Now that you've answered the questions:</p>
-            <button class="button" onclick="showMessage('bigLove')">Big Love</button>
-            <button class="button" onclick="showMessage('loveLetter')">Love Letter</button>
+        <div id="areVenuma" class="big-buttons">
+            <button class="button" onclick="showAlwaysLoveYou()">Syafrina always loves you</button>
         </div>
 
-        <!-- Love Messages Content -->
-        <div id="bigLove" style="display: none;">
-            <p style="color: red;">────❤️(♥)(♥)────(♥)(♥)(♥)</p>
-            <p style="color: orange;">──❤️(♥)██████(♥)(♥)█████(♥)</p>
-            <p style="color: yellow;">❤️(♥)████████(♥)████████(♥)</p>
-            <p style="color: green;">❤️(♥)██████████████████(♥)</p>
-            <p style="color: blue;">──❤️(♥)████████████████(♥)</p>
-            <p style="color: purple;">────❤️(♥)█████████████(♥)</p>
-            <p style="color: pink;">──────❤️(♥)█████████(♥)</p>
-            <p style="color: brown;">────────❤️(♥)█████(♥)</p>
-            <p style="color: black;">──────────❤️(♥)██(♥)</p>
-            <p style="color: gray;">────────────❤️(♥)</p>
+        <div id="quiz2" class="big-buttons">
+            <div class="quiz">Does Syafrina love you?</div>
+            <button class="button" onclick="showBigButtons()">Yes</button>
+            <button class="button" onclick="showAreVenuma()">No</button>
         </div>
 
-        <div id="loveLetter" style="display: none;">
-            <p>My Dearest <span class="name">Komugi</span>,</p>
+        <div id="message" class="message">
+            <p>My Dearest Komugi,</p>
             <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
-            <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
+            <p>Get well soon, my love. <span class="heart">❤️</span></p>
         </div>
 
-        <!-- Syafrina Always Loves You -->
-        <div id="syafrinaLove" style="display: none;">
-            <p>Syafrina always loves you! 💕</p>
-            <button class="button" onclick="showButtons('yes2')">Big Love</button>
-            <button class="button" onclick="showButtons('yes2')">Love Letter</button>
-        </div>
+        <button id="backButton" class="button back-button" onclick="goBack()">Back</button>
     </div>
 
     <script>
-        function showAnswer(responseId) {
-            document.getElementById(responseId).style.display = "block";
-            document.getElementById('question1').style.display = "none";
+        function showButtons() {
+            document.getElementById("quiz1").style.display = "none";
+            document.getElementById("bigButtons").style.display = "block";
         }
 
-        function showQuestion(questionId) {
-            document.getElementById(questionId).style.display = "block";
-            document.getElementById('responses').style.display = "none";
+        function showAreVenuma() {
+            document.getElementById("quiz1").style.display = "none";
+            document.getElementById("bigButtons").style.display = "none";
+            document.getElementById("areVenuma").style.display = "block";
         }
 
-        function showButtons(responseId) {
-            document.getElementById('loveMessages').style.display = "block";
-            document.getElementById('responses').style.display = "none";
+        function showAlwaysLoveYou() {
+            document.getElementById("areVenuma").style.display = "none";
+            document.getElementById("bigButtons").style.display = "block";
         }
 
-        function showMessage(messageId) {
-            document.getElementById(messageId).style.display = "block";
-            document.getElementById('loveMessages').style.display = "none";
+        function showBigButtons() {
+            document.getElementById("quiz2").style.display = "none";
+            document.getElementById("bigButtons").style.display = "block";
+        }
+
+        function showMessage() {
+            document.getElementById("bigButtons").style.display = "none";
+            document.getElementById("message").style.display = "block";
+        }
+
+        function showLoveLetter() {
+            document.getElementById("bigButtons").style.display = "none";
+            document.getElementById("message").style.display = "block";
+        }
+
+        function goBack() {
+            document.getElementById("message").style.display = "none";
+            document.getElementById("bigButtons").style.display = "none";
+            document.getElementById("areVenuma").style.display = "none";
+            document.getElementById("quiz2").style.display = "none";
+            document.getElementById("bigButtons").style.display = "none";
+            document.getElementById("quiz1").style.display = "block";
         }
     </script>
 </body>
 </html>
+
