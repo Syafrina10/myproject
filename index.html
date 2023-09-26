@@ -49,10 +49,12 @@
         }
 
         .heart {
+            color: #ff1493; /* Deep Pink */
             font-size: 48px; /* Increase the size of the heart */
         }
 
         .infinity {
+            color: #4b0082; /* Indigo */
             font-size: 72px; /* Increase the size of the infinity symbol */
         }
 
@@ -70,7 +72,7 @@
 <body>
     <div id="container">
         <div class="content" id="quizContainer">
-            <h2>Answer the Questions</h2>
+            <h2 style="color: #ff69b4;">Answer the Questions</h2>
             <p>Here's a sweet quiz for you:</p>
             <!-- Quiz 1 -->
             <div class="quiz-question">
@@ -81,10 +83,10 @@
         </div>
 
         <div class="content" id="loveButtonContainer">
-            <h2>Sweet Words</h2>
+            <h2 style="color: #ff69b4;">Sweet Words</h2>
             <!-- Quiz 2 -->
             <div class="quiz-question">
-                <p id="question2">Do you want to see the love messages?</p>
+                <p id="question2">Question: Does Syafrina love you?</p>
                 <button class="button" onclick="showLoveButtons('yes')">Yes</button>
                 <button class="button" onclick="showLoveButtons('no')">No</button>
                 <button class="button" onclick="goBack()">Back</button>
@@ -93,7 +95,7 @@
         </div>
 
         <div class="content" id="alwaysLoveYou">
-            <h2>Sweet Words</h2>
+            <h2 style="color: #ff69b4;">Sweet Words</h2>
             <p>You answered "Yes," and that's absolutely right!</p>
             <p>Syafrina always loves you!</p>
             <!-- Quiz 4 -->
@@ -106,11 +108,11 @@
         </div>
 
         <div class="content" id="message">
-            <p>My Dearest <span class="name">Komugi</span>,</p>
+            <p>My Dearest <span class="name" style="color: #0077b6;">Komugi</span>,</p>
             <p>As you rest and recover, please know that my <span class="love">❤️</span> and thoughts are with you every step of the way. Rest, relax, and allow your body to heal.</p>
             <p>This is just a small reminder that I'm here for you. I <span class="love">❤️</span> you more than words can express; it's <span class="love infinity">❤️&infin;</span>.</p>
             <p>Until then, rest, heal, and know that you are cherished beyond measure.</p>
-            <p>Get well soon, my <span class="name">love</span>. <span class="heart">❤️</span></p>
+            <p>Get well soon, my <span class="name" style="color: #0077b6;">love</span>. <span class="heart">❤️</span></p>
             <button class="button" onclick="displayLoveButtons('next')">Next</button>
             <button class="button" onclick="goBack()">Back</button>
             <button class="button" onclick="goHome()">Home</button>
@@ -139,7 +141,6 @@
             const contentStack = [];
 
             function checkAnswer1(answer) {
-                toggleContent('quizContainer');
                 toggleContent('loveButtonContainer');
                 if (answer === 'hantu') {
                     alert('Yes, you la the hantu!');
@@ -149,9 +150,7 @@
             function showLoveButtons(answer) {
                 if (answer === 'yes') {
                     toggleContent('message');
-                    toggleContent('sadMessage');
                 } else if (answer === 'no') {
-                    toggleContent('alwaysLoveYou');
                     toggleContent('sadMessage');
                 }
             }
@@ -159,7 +158,6 @@
             function displayLoveButtons(action) {
                 if (action === 'next') {
                     toggleContent('message');
-                    toggleContent('sadMessage');
                 }
             }
 
@@ -192,3 +190,4 @@
     </div>
 </body>
 </html>
+
