@@ -31,6 +31,10 @@
             display: block; /* Initially show the quiz container */
         }
 
+        .quiz-question {
+            margin-bottom: 10px;
+        }
+
         .name {
             color: #0077b6; /* Purple color */
         }
@@ -69,21 +73,23 @@
             <h2>Answer the Questions</h2>
             <p>Here's a sweet quiz for you:</p>
             <!-- Quiz 1 -->
-            <p id="question1">Question: Who is the prettiest girl in this world?</p>
-            <button class="button" onclick="checkAnswer1('komugi')">Komugi</button>
-            <button class="button" onclick="checkAnswer1('hantu')">Hantu</button>
+            <div class="quiz-question">
+                <p id="question1">Question: Who is the prettiest girl in this world?</p>
+                <button class="button" onclick="checkAnswer1('komugi')">Komugi</button>
+                <button class="button" onclick="checkAnswer1('hantu')">Hantu</button>
+            </div>
         </div>
 
         <div class="content" id="loveButtonContainer">
             <h2>Sweet Words</h2>
-            <p>You chose wisely! Komugi is indeed the prettiest girl in this world.</p>
-            <p>Now, let's move on to some sweet messages...</p>
             <!-- Quiz 2 -->
-            <p id="question2">Do you want to see the love messages?</p>
-            <button class="button" onclick="showLoveButtons('yes')">Yes</button>
-            <button class="button" onclick="showLoveButtons('no')">No</button>
-            <button class="button" onclick="goBack()">Back</button>
-            <button class="button" onclick="goHome()">Home</button>
+            <div class="quiz-question">
+                <p id="question2">Do you want to see the love messages?</p>
+                <button class="button" onclick="showLoveButtons('yes')">Yes</button>
+                <button class="button" onclick="showLoveButtons('no')">No</button>
+                <button class="button" onclick="goBack()">Back</button>
+                <button class="button" onclick="goHome()">Home</button>
+            </div>
         </div>
 
         <div class="content" id="alwaysLoveYou">
@@ -91,10 +97,12 @@
             <p>You answered "Yes," and that's absolutely right!</p>
             <p>Syafrina always loves you!</p>
             <!-- Quiz 4 -->
-            <p>Now, let's continue with the love messages...</p>
-            <button class="button" onclick="displayLoveButtons('next')">Next</button>
-            <button class="button" onclick="goBack()">Back</button>
-            <button class="button" onclick="goHome()">Home</button>
+            <div class="quiz-question">
+                <p>Now, let's continue with the love messages...</p>
+                <button class="button" onclick="displayLoveButtons('next')">Next</button>
+                <button class="button" onclick="goBack()">Back</button>
+                <button class="button" onclick="goHome()">Home</button>
+            </div>
         </div>
 
         <div class="content" id="message">
@@ -131,13 +139,10 @@
             const contentStack = [];
 
             function checkAnswer1(answer) {
-                if (answer === 'komugi') {
-                    toggleContent('loveButtonContainer');
-                    toggleContent('quizContainer');
-                } else if (answer === 'hantu') {
-                    alert('Ya, you la the hantu.');
-                    toggleContent('quizContainer');
-                    toggleContent('alwaysLoveYou');
+                toggleContent('quizContainer');
+                toggleContent('loveButtonContainer');
+                if (answer === 'hantu') {
+                    alert('Yes, you la the hantu!');
                 }
             }
 
@@ -146,7 +151,6 @@
                     toggleContent('message');
                     toggleContent('sadMessage');
                 } else if (answer === 'no') {
-                    alert('Well, Syafrina always loves you! 😊');
                     toggleContent('alwaysLoveYou');
                     toggleContent('sadMessage');
                 }
